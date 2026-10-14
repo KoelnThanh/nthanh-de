@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thanh Nguyen · SAP-Consultant, Tanzlehrer, Bastler</title>
+<link rel="canonical" href="https://nthanh.de/">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nthanh.de/">
+<meta property="og:title" content="Thanh Nguyen · SAP-Consultant, Tanzlehrer, Bastler">
+<meta property="og:description" content="SAP-Consultant, Tanzlehrer, Bastler. Consulting, Tanzen und Tech von Thanh Nguyen.">
+<meta property="og:image" content="https://nthanh.de/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Thanh Nguyen", "url": "https://nthanh.de/", "image": "https://nthanh.de/og.jpg", "jobTitle": "SAP-Consultant", "address": {"@type": "PostalAddress", "addressLocality": "Viersen", "addressCountry": "DE"}, "sameAs": ["https://www.linkedin.com/in/thanh-nguyen-722b821b0/", "https://www.bachata-viersen.de"]}</script>
+<script data-goatcounter="https://nthanh.goatcounter.com/count" async src="/count.js"></script>
+<meta name="description" content="SAP-Consultant, Tanzlehrer, Bastler. Consulting, Tanzen und Tech von Thanh Nguyen.">
+<link rel="preload" href="/fonts/archivo-normal-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+/* Layout: vollflächige Bänder Gold · Creme · Schwarz · Sand · Schwarz.
+   Farben und Akzentschrift (Playfair kursiv) aus der Marke von Bachata Viersen; ein einziges Erscheinungsbild, kein Dark Mode. */
+:root {
+  --ink:     #0A0A0A;
+  --char:    #1A1816;
+  --line-d:  #34302B;
+  --cream:   #F5F0EB;
+  --sand:    #E8E0D8;
+  --gold:    #D4A03A;
+  --gold-hi: #E9C27A;
+  --gold-lo: #9A6410;
+  --amber:   #C47F17;
+  --stone:   #8A8178;
+  --grad:    radial-gradient(120% 90% at 55% 35%, #F7E6C2 0%, var(--gold-hi) 38%, var(--gold) 70%, var(--amber) 100%);
+
+  --f-disp:  "Archivo", "Arial Narrow", "Segoe UI", sans-serif;
+  --f-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --f-mono:  "IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  --gut: clamp(16px, 4vw, 48px);
+  --max: 1360px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--cream); color: var(--ink); font: 400 1.0625rem/1.55 var(--f-disp); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+img, video { display: block; max-width: 100%; height: auto; }
+body { margin: 0; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.dark :focus-visible { outline-color: var(--gold); }
+h1, h2, h3, h4, p { margin: 0; }
+.band { padding-inline: var(--gut); }
+.in { max-width: var(--max); margin-inline: auto; }
+.mono { font-family: var(--f-mono); font-size: .76rem; line-height: 1.5; }
+.cap { font-family: var(--f-mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; }
+em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-spacing: -.01em; }
+.giant { font-family: var(--f-disp); font-stretch: 62%; font-weight: 900; text-transform: uppercase; line-height: .8; }
+
+/* ================= HERO (Porträt, randlos) ================= */
+.hero { position: relative; background: #05090D; color: var(--cream); overflow: hidden; isolation: isolate; }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; z-index: -2; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(5,9,13,.55) 0%, rgba(5,9,13,0) 22%, rgba(5,9,13,0) 52%, rgba(5,9,13,.85) 100%); }
+.hero .in { min-height: clamp(560px, 64vw, 940px); display: grid; grid-template-rows: auto 1fr auto; }
+.info { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px 24px; padding-block: 18px 16px; border-bottom: 1px solid rgba(245,240,235,.25); }
+.info .cap { display: block; margin-bottom: 4px; color: var(--gold); }
+.info a { text-decoration: none; }
+.info a:hover { color: var(--gold-hi); }
+.info nav { display: flex; flex-wrap: wrap; gap: 2px 14px; }
+@media (max-width: 760px) { .info { grid-template-columns: 1fr 1fr; } .info .hide-s { display: none; } }
+.hero .tag { align-self: end; display: flex; justify-content: space-between; align-items: end; gap: 24px; padding-bottom: 14px; }
+.hero .tag .mono { max-width: 30ch; text-align: left; color: rgba(245,240,235,.8); }
+.hero h1 { font-size: clamp(4.6rem, 15.6vw, 15rem); line-height: .78; padding-bottom: clamp(16px, 2.4vw, 32px); white-space: nowrap;
+  background: linear-gradient(180deg, var(--gold-hi) 10%, var(--gold) 55%, var(--amber) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@media (max-width: 760px) {
+  .hero > img { object-position: 50% 0; height: 72%; }
+  .hero::after { background: linear-gradient(180deg, rgba(5,9,13,.5) 0%, rgba(5,9,13,0) 18%, rgba(5,9,13,0) 45%, #05090D 72%); }
+  .hero .in { min-height: 0; padding-top: 0; }
+  .hero .tag { flex-direction: column; align-items: start; margin-top: 62vw; }
+  .hero .tag .mono { text-align: left; }
+  .hero h1 { white-space: normal; font-size: clamp(4.2rem, 27vw, 9rem); }
+  .hero h1 span { display: block; }
+}
+
+/* ================= Gemeinsames ================= */
+.sec { padding-block: clamp(64px, 9vw, 120px); }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 16px; border-bottom: 1px solid currentColor; padding-bottom: 14px; margin-bottom: clamp(32px, 5vw, 56px); }
+.sec-head h2 { font-size: clamp(3.6rem, 13vw, 11rem); }
+.sec-head h2.mid { font-size: clamp(3rem, 8vw, 6.5rem); }
+.maker { background: var(--cream); }
+.sec-head .cap { text-align: right; }
+@media (max-width: 640px) { .sec-head { grid-template-columns: 1fr; } .sec-head .cap { text-align: left; } }
+.statement { font-size: clamp(1.7rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -.02em; font-weight: 500; max-width: 22ch; text-wrap: balance; }
+.statement em { color: var(--gold-lo); }
+.dark { background: var(--ink); color: var(--cream); }
+.dark .sec-head h2 { background: linear-gradient(180deg, var(--gold-hi), var(--amber)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.dark .statement em { color: var(--gold); }
+.btn { font: 600 .95rem var(--f-disp); cursor: pointer; display: inline-flex; gap: 10px; align-items: center; background: var(--ink); color: var(--gold); border: 0; padding: 12px 18px; text-decoration: none; justify-self: start; }
+.btn:hover { background: var(--char); color: var(--gold-hi); }
+.btn.line { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn.line:hover { background: var(--gold-hi); }
+.btn.gold { background: var(--gold); color: var(--ink); }
+.btn.gold:hover { background: var(--gold-hi); }
+
+/* ================= CONSULTING (Creme) ================= */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); align-items: start; gap: clamp(28px, 5vw, 72px); }
+.sticky { position: sticky; top: 24px; }
+@media (max-width: 960px) { .sticky { position: static; } }
+.about figure { margin: 0; }
+.about figure img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; filter: grayscale(1) contrast(1.08) brightness(1.05); }
+.about figcaption { margin-top: 8px; color: var(--stone); }
+.personal { font-family: var(--f-serif); font-style: italic; font-size: clamp(1.5rem, 2.6vw, 2.2rem); line-height: 1.3; max-width: 22ch; position: sticky; top: 24px; }
+.rows { display: grid; }
+.row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr) minmax(0, 1.25fr); gap: 8px 24px; padding-block: 16px; border-top: 1px solid rgba(10,10,10,.16); }
+.row:last-child { border-bottom: 1px solid rgba(10,10,10,.16); }
+.row .y { font-family: var(--f-mono); font-size: .82rem; font-variant-numeric: tabular-nums; padding-top: 4px; }
+.row h3 { font-size: 1.25rem; font-weight: 700; font-stretch: 85%; line-height: 1.2; }
+.row p { color: #5E5750; font-size: .95rem; }
+.row.akt .y { background: var(--gold); justify-self: start; padding: 2px 6px; height: fit-content; }
+.row .chip { display: inline-block; margin: 6px 6px 0 0; font: 500 .7rem var(--f-mono); padding: 2px 7px; border: 1px solid var(--gold-lo); color: var(--gold-lo); }
+@media (max-width: 960px) { .about { grid-template-columns: 1fr; } .about figure { max-width: 440px; } }
+/* Consulting kompakt: soll auf einen Bildschirm passen */
+#consulting.sec { padding-block: clamp(48px, 6vw, 80px); }
+#consulting .sec-head { margin-bottom: clamp(24px, 3vw, 36px); }
+#consulting .statement { font-size: clamp(1.5rem, 2.7vw, 2.4rem); }
+@media (min-width: 961px) { #consulting .about { grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); } #consulting .row { grid-template-columns: 7rem minmax(0, .9fr) minmax(0, 1.5fr); } }
+#consulting .row { padding-block: 11px; }
+#consulting .row h3 { font-size: 1.08rem; }
+#consulting .row p { font-size: .88rem; line-height: 1.45; }
+#consulting .row .y { font-size: .76rem; padding-top: 2px; }
+#consulting .row .chip { margin-top: 4px; font-size: .64rem; }
+@media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(48px, 7vw, 88px); border-top: 1px solid var(--ink); }
+.skill { padding: 20px 24px 4px 0; }
+.skill + .skill { padding-left: 24px; border-left: 1px solid rgba(10,10,10,.16); }
+.skill h3 { font-size: clamp(2rem, 3.4vw, 3rem); font-stretch: 62%; font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 10px; }
+.skill p { color: #5E5750; max-width: 34ch; }
+@media (max-width: 760px) { .skills { grid-template-columns: 1fr; } .skill + .skill { padding-left: 0; border-left: 0; border-top: 1px solid rgba(10,10,10,.16); } .skill { padding-bottom: 20px; } }
+
+/* ================= TANZEN (Schwarz + Gold) ================= */
+.wide-photo { position: relative; margin: clamp(36px, 5vw, 56px) 0 12px; overflow: hidden; }
+.wide-photo img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+.wide-photo figcaption, .figs figcaption { position: absolute; left: 0; bottom: 0; background: var(--gold); color: var(--ink); padding: 4px 8px; }
+.studio-lead { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(24px, 4vw, 56px); align-items: end; }
+.studio-lead { align-items: center; }
+.lead-txt { display: grid; gap: 24px; }
+.lead-txt .sub { color: #B5ADA4; max-width: 46ch; }
+.browser { --vh: clamp(240px, 28vw, 360px); display: block; text-decoration: none; background: var(--char); border: 1px solid var(--line-d); border-radius: 10px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.45); transition: transform .3s; }
+.browser:hover { transform: translateY(-4px); }
+.browser .bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #24211E; border-bottom: 1px solid var(--line-d); }
+.browser .bar i { width: 9px; height: 9px; border-radius: 50%; background: #4A443D; }
+.browser .url { margin-left: 10px; flex: 1; padding: 3px 10px; border-radius: 999px; background: var(--ink); color: var(--gold-hi); font-size: .72rem; }
+.browser .view { display: block; height: var(--vh); overflow: hidden; }
+.browser .view img { width: 100%; animation: blaettern 22s ease-in-out infinite alternate; }
+@keyframes blaettern { 0%, 12% { transform: translateY(0); } 88%, 100% { transform: translateY(calc(-100% + var(--vh))); } }
+@media (prefers-reduced-motion: reduce) { .browser .view img { animation: none; } }
+.dance { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr) minmax(0, 1fr); gap: 12px; margin-top: clamp(36px, 5vw, 56px); }
+.dance figure { margin: 0; position: relative; overflow: hidden; background: var(--char); }
+.dance .d-seq img, .dance .d-seq video { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
+.dance .d-foto img, .dance .d-kurs img, .dance .d-kurs video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 760px) {
+  .dance { grid-template-columns: 1fr 1fr; }
+  .dance .d-foto { grid-column: 1 / -1; grid-row: 1; aspect-ratio: 4 / 3; }
+  .dance .d-seq img, .dance .d-seq video { aspect-ratio: 3 / 4; }
+}
+.dance figcaption { position: absolute; left: 0; bottom: 0; background: var(--gold); color: var(--ink); padding: 4px 8px; }
+
+.pair { background: var(--grad); color: var(--ink); padding: 24px 24px 0; display: grid; }
+.pair img { width: 100%; filter: drop-shadow(0 20px 40px rgba(90, 50, 0, .3)); }
+.pair .sub { color: var(--ink); background: var(--cream); margin: 0 -24px; padding: 16px 24px; font-size: .98rem; }
+.figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.figs figure { margin: 0; position: relative; overflow: hidden; }
+.figs img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.figs figure:hover img { filter: none; }
+@media (max-width: 760px) { .studio-lead { grid-template-columns: 1fr; } .figs { grid-template-columns: 1fr 1fr; } .figs figure:first-child { grid-column: 1 / -1; } .wide-photo img { aspect-ratio: 4 / 3; } }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 12px; border: 1px solid var(--line-d); }
+.stat { padding: 18px 18px 20px; }
+.stat + .stat { border-left: 1px solid var(--line-d); }
+.stat b { display: block; font: 900 clamp(2.6rem, 5vw, 4.4rem)/.9 var(--f-disp); font-stretch: 62%; color: var(--gold); font-variant-numeric: tabular-nums; }
+.stat span { color: #B5ADA4; font-size: .9rem; display: block; margin-top: 8px; }
+
+.pipe-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-top: clamp(56px, 8vw, 104px); margin-bottom: 20px; }
+.pipe-head h3 { font-size: clamp(2rem, 4vw, 3.4rem); font-stretch: 62%; font-weight: 900; text-transform: uppercase; line-height: .9; }
+.pipe-head p { color: #B5ADA4; max-width: 46ch; }
+ol.pipe { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--line-d); }
+.pipe li { list-style: none; padding: 18px; position: relative; min-height: 210px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 8px; }
+.pipe li + li { border-left: 1px solid var(--line-d); }
+.pipe .n { font: 900 3rem/.8 var(--f-disp); font-stretch: 62%; color: var(--gold); }
+.pipe h4 { font-size: 1.1rem; font-weight: 700; }
+.pipe p { color: #B5ADA4; font-size: .92rem; }
+.pipe .mono { color: var(--gold); }
+.pipe li:not(:last-child)::after { content: "→"; position: absolute; right: -9px; top: 22px; background: var(--ink); color: var(--gold); font-family: var(--f-mono); font-size: .8rem; z-index: 1; padding: 0 2px; }
+@media (max-width: 960px) {
+  ol.pipe { grid-template-columns: 1fr; }
+  .pipe li { min-height: 0; grid-template-columns: 3.2rem minmax(0, 1fr); grid-template-rows: auto; }
+  .pipe li > :not(.n) { grid-column: 2; }
+  .pipe .n { grid-row: 1 / span 3; }
+  .pipe li + li { border-left: 0; border-top: 1px solid var(--line-d); }
+  .pipe li::after { display: none; }
+}
+.auto { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--line-d); }
+.area { padding: clamp(18px, 2.4vw, 28px); display: grid; gap: 10px; align-content: start; }
+.area:nth-child(even) { border-left: 1px solid var(--line-d); }
+.area:nth-child(n+3) { border-top: 1px solid var(--line-d); }
+.area-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.area-top .cap { color: var(--gold); }
+.area .ok { font: 500 .68rem var(--f-mono); text-transform: uppercase; letter-spacing: .1em; color: #7FD3A0; display: inline-flex; align-items: center; gap: 6px; }
+.area .ok::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #1E9E57; }
+.area h4 { font: 900 clamp(1.6rem, 2.6vw, 2.3rem)/.95 var(--f-disp); font-stretch: 62%; text-transform: uppercase; }
+.area p { color: #B5ADA4; max-width: 52ch; }
+.loop { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.loop li { font: 500 .74rem var(--f-mono); padding: 5px 10px; border: 1px solid var(--gold-lo); color: var(--gold-hi); }
+.loop li + li::before { content: "→"; margin: 0 8px 0 -2px; color: var(--gold); }
+.loop li:last-child { border-color: var(--gold); }
+.loop.cyc li:last-child::after { content: " ↺"; }
+.loop.fan li:first-child { border-color: var(--gold); }
+.loop.fan li + li + li::before { content: none; }
+.loop.fan li:last-child { border-color: var(--gold-lo); }
+.hub { margin-top: 12px; padding: 16px 18px; background: var(--char); color: #B5ADA4; }
+.hub .cap { color: var(--gold); margin-right: 10px; }
+@media (max-width: 760px) { .auto { grid-template-columns: 1fr; } .area:nth-child(even) { border-left: 0; } .area:nth-child(n+2) { border-top: 1px solid var(--line-d); } }
+.voices { margin: 12px 0 0; padding: clamp(20px, 3vw, 32px); border: 1px solid var(--line-d); display: grid; gap: 12px; }
+.voices .stars { color: var(--gold); letter-spacing: .2em; font-size: 1rem; }
+.voices blockquote { margin: 0; font: italic 400 clamp(1.3rem, 2.4vw, 2rem)/1.3 var(--f-serif); color: var(--cream); max-width: 40ch; min-height: 2.6em; transition: opacity .4s; }
+.voices figcaption { color: #B5ADA4; transition: opacity .4s; }
+.voices.fade blockquote, .voices.fade figcaption { opacity: 0; }
+@media (max-width: 600px) { .stats { grid-template-columns: 1fr 1fr 1fr; } .stat { padding: 14px 10px; } .stat span { font-size: .78rem; } }
+.cta { display: inline-flex; align-items: center; gap: 12px; margin-top: 28px; text-decoration: none; background: var(--grad); color: var(--ink); padding: 14px 20px; font-weight: 700; }
+.cta:hover { filter: brightness(1.08); }
+
+/* ================= TECH (Sand) ================= */
+.tech { background: var(--sand); }
+.feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--cream); border: 1px solid var(--ink); margin-bottom: clamp(40px, 6vw, 72px); }
+.feature .txt { padding: clamp(20px, 3vw, 40px); display: grid; gap: 14px; align-content: start; }
+.feature h3 { font-size: clamp(3.4rem, 8vw, 7rem); }
+.feature p { font-size: 1.05rem; max-width: 44ch; }
+.feature .shot { background: var(--grad); display: grid; place-items: end center; padding: 28px 28px 0; overflow: hidden; border-left: 1px solid var(--ink); }
+.feature .shot img { width: min(320px, 100%); box-shadow: 0 0 0 1px var(--ink), 0 24px 48px rgba(90,50,0,.25); }
+.feature.flip .shot { border-left: 0; border-right: 1px solid var(--ink); }
+.phones { position: relative; background: var(--ink) !important; min-height: 460px; padding: 0 !important; display: block !important; overflow: hidden; }
+.feature .phones .ph { position: absolute; width: min(40%, 210px); border-radius: 22px; border: 6px solid #2A2622; box-shadow: 0 24px 50px rgba(0,0,0,.5); }
+.phones .ph.a { left: 13%; top: 36px; transform: rotate(-4deg); }
+.phones .ph.b { right: 13%; top: 76px; transform: rotate(3deg); }
+@media (max-width: 760px) { .feature.flip .shot { border-right: 0; border-bottom: 1px solid var(--ink); order: -1; } .phones { min-height: 380px; } .feature .phones .ph { width: 44%; } .phones .ph.a { left: 4%; } .phones .ph.b { right: 4%; } }
+.case { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--ink); color: var(--cream); margin-bottom: clamp(40px, 6vw, 72px); }
+.case-txt { padding: clamp(20px, 3vw, 40px); display: grid; gap: 14px; align-content: start; }
+.case-txt .cap { color: var(--gold); }
+.case-txt h3 { font-size: clamp(2.8rem, 6vw, 5rem); color: var(--cream); }
+.case-txt p { color: #B5ADA4; max-width: 46ch; }
+.case-big { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.case-big b { font: 900 clamp(2.6rem, 5vw, 4.2rem)/.9 var(--f-disp); font-stretch: 62%; color: #8A8178; font-variant-numeric: tabular-nums; }
+.case-big b.g { color: var(--gold); }
+.case-big span { font: 400 1.6rem var(--f-mono); color: var(--gold); }
+.case-big small { font-size: 1rem; color: #B5ADA4; }
+.rules { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.rules li { font: 500 .74rem var(--f-mono); padding: 5px 10px; border: 1px solid var(--gold-lo); color: var(--gold-hi); }
+.case-txt .mono { color: #8A8178; }
+.case-chart { padding: clamp(20px, 3vw, 40px); border-left: 1px solid var(--line-d); display: grid; gap: 18px; align-content: center; }
+.case-chart .cap { color: #B5ADA4; }
+.bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.bars li { display: grid; grid-template-columns: minmax(0, 1fr) 9.5ch; gap: 6px 12px; align-items: center; }
+.bars .bl { grid-column: 1 / -1; font-size: .92rem; color: var(--cream); }
+.bars .bt { height: 14px; background: #1E1C19; position: relative; overflow: hidden; }
+.bars .bt i { position: absolute; inset: 0 auto 0 0; width: var(--w); background: linear-gradient(90deg, var(--amber), var(--gold-hi)); transition: width 1.2s cubic-bezier(.2,.8,.2,1); }
+.bars b { font: 600 .85rem var(--f-mono); color: var(--gold-hi); font-variant-numeric: tabular-nums; text-align: right; }
+.case.grow .bars .bt i { width: 0; }
+@media (max-width: 860px) { .case { grid-template-columns: 1fr; } .case-chart { border-left: 0; border-top: 1px solid var(--line-d); } }
+/* VoiceType: ein Diktat, drei Fenster */
+.feature .vt-demo { background: var(--ink); color: var(--cream); display: grid; gap: 14px; align-content: start; place-items: stretch; padding: clamp(18px, 2.4vw, 28px); }
+.vt-raw { border: 1px dashed var(--line-d); padding: 12px 14px; display: grid; gap: 8px; }
+.vt-row, .win .bar { display: flex; align-items: center; gap: 8px; }
+.vt-row .cap { color: #B5ADA4; }
+.vt-row b, .win .bar b { margin-left: auto; font: 500 .7rem var(--f-mono); color: var(--gold-hi); }
+.vt-raw p { font-size: .8rem; line-height: 1.5; color: #D8D0C6; max-width: none; }
+.vt-raw s { color: #6E665E; text-decoration-color: var(--gold); }
+.vt-key { display: flex; align-items: center; gap: 10px; color: #B5ADA4; }
+.vt-key kbd { font: 700 .8rem var(--f-mono); color: var(--ink); background: var(--grad); padding: 4px 9px; border-radius: 4px; box-shadow: 0 2px 0 var(--gold-lo); }
+.vt-wins { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
+.win { margin: 0; border: 1px solid var(--line-d); background: var(--char); display: flex; flex-direction: column; gap: 6px; padding: 0 0 10px; transition: border-color .4s, transform .4s; }
+.win .bar { padding: 6px 8px; border-bottom: 1px solid var(--line-d); font: 500 .66rem var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: #B5ADA4; }
+.win .bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--line-d); }
+.win pre, .win p { margin: 0; padding: 0 9px; font-size: .68rem; line-height: 1.45; max-width: none; white-space: pre-wrap; overflow-wrap: anywhere; }
+.win pre { font-family: var(--f-mono); color: #D8D0C6; }
+.win.w-chat p { color: #E8E0D8; }
+.win.w-mail { background: var(--cream); color: var(--ink); }
+.win.w-mail .bar { color: #5E5750; border-color: #D9D0C6; }
+.win.w-mail .bar b { color: var(--gold-lo); }
+.win.w-mail p { font-family: var(--f-serif); font-size: .74rem; }
+.len { display: block; height: 3px; margin: auto 9px 0; background: linear-gradient(90deg, var(--amber), var(--gold-hi)) 0 0 / calc(var(--w) * 100%) 100% no-repeat, var(--line-d); }
+.vt-raw .len { margin: 0; }
+.win.hot { border-color: var(--gold); transform: translateY(-3px); }
+.vt-big b { color: #8A8178; } .vt-big b.g { color: var(--gold-lo); } .vt-big small { color: #5E5750; }
+@media (max-width: 1100px) { .vt-wins { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .feature .shot.vt-demo { max-height: none; } }
+.live { display: inline-flex; align-items: center; gap: 8px; }
+.live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #1E9E57; animation: puls 1.6s infinite; }
+@keyframes puls { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .live::before { animation: none; } }
+@media (max-width: 760px) { .feature { grid-template-columns: 1fr; } .feature .shot { border-left: 0; border-top: 1px solid var(--ink); max-height: 300px; align-items: start; } .feature .shot img { width: min(240px, 100%); } }
+
+/* 3D-Druck */
+.print { margin-bottom: clamp(56px, 8vw, 104px); }
+.print-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 48px; align-items: end; margin-bottom: 24px; }
+.print-head p { max-width: 50ch; color: #5E5750; }
+.print-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.pc { aspect-ratio: 3 / 4; }
+.pc { margin: 0; position: relative; overflow: hidden; background: var(--ink); }
+.pc img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.pc:hover img { transform: scale(1.04); }
+.pc figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 12px 10px; color: var(--cream); background: linear-gradient(transparent, rgba(10,10,10,.82)); }
+.pc figcaption b { display: block; font: 700 1.05rem var(--f-disp); }
+.wall { margin: 0 0 12px; background: var(--ink); color: var(--cream); display: grid; grid-template-columns: minmax(0, 1fr) 15rem; align-items: end; }
+.wall img { width: 100%; }
+.wall figcaption { padding: 20px; display: grid; gap: 8px; border-left: 1px solid var(--line-d); align-self: stretch; align-content: end; }
+.wall b { font: 900 clamp(3rem, 6vw, 5rem)/.85 var(--f-disp); font-stretch: 62%; color: var(--gold); }
+.wall span { font-size: .9rem; color: #B5ADA4; }
+@media (max-width: 860px) { .wall { grid-template-columns: 1fr; } .wall figcaption { border-left: 0; border-top: 1px solid var(--line-d); } }
+.mat { position: absolute; top: 10px; left: 10px; background: rgba(10,10,10,.75); color: var(--gold-hi); padding: 2px 8px; backdrop-filter: blur(4px); }
+.pairs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 12px; }
+.pair2 { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--ink); color: var(--cream); }
+.pair2 .cad, .pair2 .real { position: relative; overflow: hidden; aspect-ratio: 1 / 1; }
+.pair2 .cad { display: grid; place-items: center; background: var(--ink); border-right: 1px solid var(--line-d); }
+.pair2 .cad img { width: 115%; max-width: none; }
+.pair2 .real img { width: 100%; height: 100%; object-fit: cover; }
+.pair2 figcaption { grid-column: 1 / -1; padding: 14px 16px 16px; display: grid; gap: 4px; border-top: 1px solid var(--line-d); }
+.pair2 figcaption b { font: 900 1.5rem/1 var(--f-disp); font-stretch: 62%; text-transform: uppercase; color: var(--gold); }
+.pair2 figcaption span { color: #B5ADA4; font-size: .92rem; }
+.tag2 { position: absolute; top: 10px; left: 10px; padding: 2px 8px; border: 1px solid var(--gold-lo); color: var(--gold-hi); background: rgba(10,10,10,.6); }
+.tag2.g { border-color: var(--gold); background: var(--gold); color: var(--ink); }
+@media (max-width: 860px) { .pairs { grid-template-columns: 1fr; } }
+.arrow { position: absolute; top: 10px; right: 10px; background: var(--gold); color: var(--ink); padding: 2px 8px; }
+@media (max-width: 860px) { .print-head { grid-template-columns: 1fr; } .print-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .pc:last-child { grid-column: span 2; aspect-ratio: 16 / 9; } }
+
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.filters button { font: 500 .74rem var(--f-mono); text-transform: uppercase; letter-spacing: .08em; cursor: pointer; border: 1px solid var(--ink); background: transparent; color: var(--ink); padding: 7px 12px; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--gold); }
+.filters .n { opacity: .6; margin-left: 4px; }
+.sub-h { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.sub-h h3 { font-size: clamp(2rem, 4vw, 3.4rem); }
+.index { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.item { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) 9rem 88px; gap: 8px 28px; align-items: center; padding-block: 12px; border-bottom: 1px solid var(--ink); }
+.item h3 { font-size: clamp(1.7rem, 3vw, 2.6rem); transition: transform .25s, color .25s; }
+.item p { color: #5E5750; font-size: .95rem; }
+.item .stk { display: block; margin-top: 6px; color: var(--ink); }
+.item .st { font-family: var(--f-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+.item .st i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: var(--stone); }
+.item .st.ok i { background: #1E9E57; }
+.item .st.wip i { background: var(--gold); box-shadow: 0 0 0 1px var(--ink); }
+.thumb { width: 88px; height: 60px; overflow: hidden; background: var(--ink); border: 1px solid var(--ink); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.tile { width: 100%; height: 100%; display: grid; place-items: center; color: var(--gold); background: var(--ink); font-family: var(--f-mono); font-size: .7rem; text-align: center; line-height: 1.2; }
+.tile b { font: 900 2rem/1 var(--f-disp); font-stretch: 62%; display: block; }
+.tile.key b { border: 2px solid var(--gold); padding: 2px 8px; border-radius: 6px; font-size: 1.4rem; }
+.wave { display: flex; gap: 3px; align-items: center; height: 60%; }
+.wave i { width: 4px; background: var(--gold); border-radius: 2px; }
+@media (hover: hover) and (pointer: fine) {
+  .item:hover h3 { transform: translateX(14px); color: var(--gold-lo); }
+  .item:hover { background: linear-gradient(90deg, var(--gold) 0 6px, transparent 6px); }
+}
+@media (max-width: 960px) { .item { grid-template-columns: minmax(0, 1fr) 88px; } .item > p, .item .st { grid-column: 1; } .item .thumb { grid-column: 2; grid-row: 1 / span 3; align-self: start; } }
+.lockform { display: none; grid-column: 1 / -1; gap: 8px; flex-wrap: wrap; align-items: center; }
+.lockform.open { display: flex; }
+.lockform input { font: .9rem var(--f-mono); padding: 9px 12px; border: 1px solid var(--ink); background: var(--cream); color: var(--ink); min-width: 0; flex: 0 1 220px; }
+.lockform small { color: #5E5750; flex-basis: 100%; }
+.peek { position: fixed; left: 0; top: 0; z-index: 50; width: 300px; aspect-ratio: 4 / 3; pointer-events: none; border: 1px solid var(--ink); background: var(--ink); overflow: hidden; opacity: 0; transform: translate(-50%, -50%) scale(.85); transition: opacity .2s, transform .2s; }
+.peek.on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.peek img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.peek .tile { font-size: 1rem; }
+.peek .tile b { font-size: 5rem; }
+
+/* ================= JETZT + KONTAKT (Schwarz) ================= */
+.now { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 32px; padding-bottom: clamp(48px, 7vw, 88px); border-bottom: 1px solid var(--line-d); }
+.now h2 { font-size: clamp(2.4rem, 5vw, 4.4rem); color: var(--gold); margin-top: 12px; }
+.now ul { list-style: none; margin: 0; padding: 0; }
+.now li { padding-block: 14px; border-top: 1px solid var(--line-d); font-size: 1.15rem; display: grid; grid-template-columns: 2rem minmax(0, 1fr); }
+.now li::before { content: "→"; font-family: var(--f-mono); color: var(--gold); }
+@media (max-width: 760px) { .now { grid-template-columns: 1fr; } }
+.contact { padding-block: clamp(64px, 9vw, 120px) 28px; }
+.contact h2 { font-size: clamp(4rem, 15vw, 14rem); margin-top: 14px; }
+.contact h2 em { text-transform: none; font-size: .6em; vertical-align: .14em; color: var(--gold); }
+.contact .row2 { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 28px; }
+.mail { font-family: var(--f-mono); font-size: 1.05rem; padding: 11px 14px; border: 1px dashed var(--gold); color: var(--gold-hi); user-select: all; }
+.contact .btn.line { color: var(--cream); border-color: var(--cream); }
+.contact .btn.line:hover { background: var(--cream); color: var(--ink); }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 24px 32px; border-top: 1px solid var(--line-d); color: var(--stone); }
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--gold); }
+
+
+/* ================= WIE ICH DENKE (Goldband) ================= */
+.think { background: var(--grad); color: var(--ink); padding-block: clamp(56px, 8vw, 104px); }
+.think .cap { opacity: .7; }
+.think-h { font: 500 clamp(1.9rem, 4.4vw, 3.9rem)/1.08 var(--f-disp); letter-spacing: -.02em; max-width: 24ch; margin: 14px 0 clamp(36px, 5vw, 56px); text-wrap: balance; }
+.think-h em { font-weight: 400; }
+.swap { display: inline-block; font-family: var(--f-serif); font-style: italic; font-weight: 400; border-bottom: 3px solid var(--ink); transition: opacity .35s, transform .35s; }
+.swap.out { opacity: 0; transform: translateY(.25em); }
+.traits { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+.traits li { padding: 18px 18px 6px 0; display: grid; gap: 8px; align-content: start; transition: transform .35s; }
+.traits li + li { padding-left: 18px; border-left: 1px solid rgba(10,10,10,.25); }
+.traits b { font: 900 clamp(1.7rem, 2.6vw, 2.4rem)/.95 var(--f-disp); font-stretch: 62%; text-transform: uppercase; transition: color .35s; }
+.traits span { font-size: .95rem; line-height: 1.45; color: #3B2A10; }
+.traits li { box-shadow: inset 0 0 0 var(--ink); transition: box-shadow .35s; }
+.traits li.on { box-shadow: inset 0 6px 0 var(--ink); }
+.traits li:not(.on) span { color: #5A4420; }
+@media (max-width: 960px) {
+  .traits { grid-template-columns: 1fr 1fr; }
+  .traits li, .traits li + li { padding: 16px 16px 16px 0; border-left: 0; border-bottom: 1px solid rgba(10,10,10,.25); }
+  .traits li:nth-child(even) { padding-left: 16px; border-left: 1px solid rgba(10,10,10,.25); }
+}
+@media (max-width: 480px) { .traits { grid-template-columns: 1fr; } .traits li:nth-child(even) { padding-left: 0; border-left: 0; } }
+@media (prefers-reduced-motion: reduce) { .swap, .traits li { transition: none; } }
+
+/* ================= Dynamik ================= */
+.progress { position: fixed; left: 0; top: 0; z-index: 60; height: 3px; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--gold-hi), var(--amber)); margin-top: env(safe-area-inset-top, 0px); }
+.dock { position: fixed; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 55; display: flex; gap: 2px; padding: 5px; border-radius: 999px;
+  background: rgba(10,10,10,.82); backdrop-filter: blur(10px); border: 1px solid var(--line-d); box-shadow: 0 12px 30px rgba(0,0,0,.3);
+  transform: translate(-50%, 140%); transition: transform .4s cubic-bezier(.2,.8,.2,1); max-width: calc(100vw - 24px); overflow-x: auto; }
+.dock.on { transform: translate(-50%, 0); }
+.totop { position: fixed; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 56; width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; text-decoration: none; font: 700 1.1rem var(--f-disp); background: var(--gold); color: var(--ink); box-shadow: 0 10px 24px rgba(0,0,0,.3);
+  opacity: 0; transform: translateY(20px); pointer-events: none; transition: opacity .3s, transform .3s, background .2s; }
+.totop.on { opacity: 1; transform: none; pointer-events: auto; }
+.totop:hover { background: var(--gold-hi); }
+@media (max-width: 480px) { .totop { bottom: calc(66px + env(safe-area-inset-bottom, 0px)); right: 12px; width: 40px; height: 40px; } }
+@media (max-width: 480px) {
+  #dock { left: 10px; right: 10px; max-width: none; gap: 0; padding: 3px; transform: translateY(140%); }
+  #dock.on { transform: translateY(0); }
+  #dock a { flex: 1 1 auto; text-align: center; padding: 7px 2px; font-size: .7rem; }
+  #dock a.wide { display: none; }
+}
+.dock a { font: 500 .78rem var(--f-disp); color: #CFC7BE; text-decoration: none; padding: 7px 13px; border-radius: 999px; white-space: nowrap; transition: background .25s, color .25s; }
+.dock a:hover { color: var(--cream); }
+.dock a.act { background: var(--gold); color: var(--ink); }
+.hero > img { animation: zoom 18s ease-out both; }
+@keyframes zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+.hero h1 { background-size: 100% 100%, 200% 100%; }
+.hero h1 { background-image: linear-gradient(180deg, var(--gold-hi) 10%, var(--gold) 55%, var(--amber) 100%), linear-gradient(100deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%); background-blend-mode: soft-light; animation: shimmer 7s ease-in-out 1.2s infinite; }
+@keyframes shimmer { 0% { background-position: 0 0, 150% 0; } 35%, 100% { background-position: 0 0, -50% 0; } }
+.rise { transform: translateY(28px); transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.rise.shown { transform: none; }
+.loop li { transition: background .4s, color .4s, border-color .4s; }
+.loop li.hot { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.loop li.hot::before { color: var(--ink); }
+.wall { position: relative; }
+.wall .light { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(255,226,160,.28), transparent 70%); mix-blend-mode: screen; }
+.wall:hover .light { opacity: 1; }
+@media (hover: hover) and (pointer: fine) { .wall img { filter: brightness(.8); transition: filter .3s; } .wall:hover img { filter: brightness(.65); } }
+@media (prefers-reduced-motion: reduce) { .hero > img, .hero h1 { animation: none; } .rise { transform: none; transition: none; } .dock { transition: none; } }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="band hero" id="start">
+  <img src="assets/hero-portrait.webp" alt="Thanh Nguyen lächelnd im schwarzen Bachata-Viersen-Shirt vor dunkelblauem Hintergrund" width="2200" height="1467">
+  <div class="in">
+    <div class="info">
+      <div class="mono"><span class="cap">Wer</span>Thanh Nguyen<br>Viersen</div>
+      <div class="mono"><span class="cap">Was</span>SAP-Consultant, Tanzlehrer,<br>Bastler mit KI und 3D-Drucker</div>
+      <div class="mono hide-s"><span class="cap">Kapitel</span><nav aria-label="Kapitel"><a href="#consulting">Consulting</a><a href="#tanzen">Tanzen</a><a href="#tech">Software</a><a href="#maker">Crafting</a><a href="#denken">Denkweise</a><a href="#kontakt">Kontakt</a></nav></div>
+      <div class="mono hide-s"><span class="cap">Gerade</span>Offen für Gespräche<br><a href="#kontakt">Schreib mir →</a></div>
+    </div>
+    <div class="tag">
+      <span class="mono">Ich lebe in Viersen, bin Vater von zwei Kindern und kann an keinem Problem vorbeigehen, ohne ein Werkzeug dafür zu bauen.</span>
+    </div>
+    <h1 class="giant"><span>Thanh</span> <span>Nguyen</span></h1>
+  </div>
+</header>
+
+<main>
+<!-- ================= CONSULTING ================= -->
+<section class="band sec" id="consulting">
+  <div class="in">
+    <div class="sec-head"><h2 class="giant">Consulting</h2><span class="cap">Kapitel 1 / 3</span></div>
+    <div class="about">
+      <div><p class="statement sticky">Ich übersetze. Zwischen Fachbereich und IT, zwischen <em>Idee</em> und <em>Code</em>.</p></div>
+      <div>
+        <div class="rows">
+          <div class="row akt"><span class="y">2026</span><h3>KI im Alltag</h3><p>Ein Jahr voller Werkzeuge, die mir und der Tanzschule echte Arbeit abnehmen. Mehr dazu unter Software.</p></div>
+          <div class="row"><span class="y">seit 2021</span><h3>Technischer Teilprojektleiter</h3><p>Zehn Leute, ein langes Großprojekt, viel Coaching und Mentoring.</p></div>
+          <div class="row"><span class="y">2020</span><h3>IPMA Level D</h3><p>Zertifizierter Projektmanager (GPM).</p></div>
+          <div class="row"><span class="y">seit 2015</span><h3>SAP-Consultant, ConVista</h3><p>Vom ABAP-Entwickler zum Tech-Lead für 30 IT-Fachkräfte. Beihilfe für eine Versorgungskasse, Vertriebsplattform für eine Bausparkasse, ABAP-Coaching für interne und externe Kollegen.<br><span class="chip">ABAP OO</span><span class="chip">SAP FS-CM</span><span class="chip">BRF+</span><span class="chip">ABAP in Eclipse</span></p></div>
+          <div class="row"><span class="y">2007–2014</span><h3>Mathematik, Uni Bonn</h3><p>B.Sc. und M.Sc., Schwerpunkt Numerik. Nebenbei Tutor.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TANZEN ================= -->
+<section class="band sec dark" id="tanzen">
+  <div class="in">
+    <div class="sec-head"><h2 class="giant">Tanzen</h2><span class="cap">Kapitel 2 / 3</span></div>
+    <div class="studio-lead">
+      <div class="lead-txt">
+        <p class="statement">Eine kleine Tanzschule, ein großer <em>Anspruch</em>, und ein Büro, das fast von allein läuft.</p>
+        <p class="sub">Bachata Viersen haben Christina und ich 2023 gegründet. Guter Unterricht, eine Gemeinschaft, in die man gern zurückkommt, und so wenig Zettelwirtschaft wie möglich. Website, Flyer und Automatisierung machen wir selbst.</p>
+      </div>
+      <a class="browser" data-goatcounter-click="klick-tanzschule" href="https://www.bachata-viersen.de" target="_blank" rel="noopener" aria-label="Website von Bachata Viersen öffnen">
+        <span class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="url mono">bachata-viersen.de</span></span>
+        <span class="view"><img loading="lazy" decoding="async" src="assets/bv-website.webp" alt="Startseite von bachata-viersen.de mit Logo, Tanzpaar, Text und FAQ" width="800" height="1522"></span>
+      </a>
+    </div>
+    <div class="dance">
+      <figure class="d-seq"><video src="assets/tanz-sequenz.mp4" poster="assets/tanz-sequenz-poster.webp" width="400" height="600" autoplay muted loop playsinline preload="metadata" aria-label="Kurze Tanzsequenz: Thanh und Christina tanzen Bachata im violetten Licht eines Clubs"></video><figcaption class="mono">Christina &amp; Thanh</figcaption></figure>
+      <figure class="d-foto"><img loading="lazy" decoding="async" src="assets/kurs3.webp" alt="Paare üben eine Figur im Kursraum, eine Tänzerin trägt das Bachata-Viersen-Shirt" width="1400" height="1050"><figcaption class="mono">Kurs · März 2026</figcaption></figure>
+      <figure class="d-kurs"><video src="assets/kurs-video.mp4" poster="assets/kurs-video-poster.webp" width="560" height="420" autoplay muted loop playsinline preload="metadata" aria-label="Kurze Videosequenz aus dem Kurs: mehrere Paare drehen gleichzeitig im hellen Saal"></video><figcaption class="mono">Kurs · Juni 2026</figcaption></figure>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>50+</b><span>tanzen aktuell bei uns</span></div>
+      <div class="stat"><b>180+</b><span>haben bei uns tanzen gelernt</span></div>
+      <div class="stat"><b>5,0</b><span>Sterne bei Google, aus 28 Bewertungen</span></div>
+    </div>
+    <figure class="voices" id="voices">
+      <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+      <blockquote id="vq">„Familiär, herzlich und total unkompliziert. Die Tanzlehrer nehmen sich Zeit für jeden Einzelnen.“</blockquote>
+      <figcaption class="mono" id="vn">Vicky H. · Google</figcaption>
+    </figure>
+    <div class="pipe-head">
+      <h3>Backstage: eine<br>digitale Tanzschule</h3>
+      <p>Wir wollen so wenig Zeit wie möglich im Büro verbringen und so viel wie möglich im Saal. Deshalb läuft fast alles, was sich wiederholt, inzwischen automatisch.</p>
+    </div>
+    <div class="auto">
+      <article class="area">
+        <div class="area-top"><span class="cap">Kundengewinnung</span><span class="ok">läuft</span></div>
+        <h4>Keine Anfrage geht verloren</h4>
+        <p>Mail, Formular oder Anruf: alles landet an einem Ort.</p>
+        <ol class="loop cyc" aria-label="Wiederkehrender Ablauf"><li>Anfrage</li><li>Probestunde</li><li>Nachfassen alle 7 Tage</li><li>Mitglied</li></ol>
+      </article>
+      <article class="area">
+        <div class="area-top"><span class="cap">Anträge &amp; Anmeldung</span><span class="ok">läuft</span></div>
+        <h4>Anmelden ohne Papier</h4>
+        <p>Einmal online anmelden, der Rest passiert von allein.</p>
+        <ol class="loop" aria-label="Ablauf der Anmeldung"><li>Anmeldung</li><li>Vertrag &amp; Rechnung</li><li>Lastschrift</li><li>Kontakt synchron</li><li>In der Gruppe</li></ol>
+      </article>
+      <article class="area">
+        <div class="area-top"><span class="cap">Verwaltung &amp; Finanzen</span><span class="ok">läuft</span></div>
+        <h4>Ein Datensatz, alle Dokumente</h4>
+        <p>Alles aus denselben Daten, per Knopfdruck.</p>
+        <ol class="loop fan" aria-label="Dokumente aus einem Datensatz"><li>Datensatz</li><li>Rechnung</li><li>Lastschrift</li><li>Erinnerung</li><li>Pause</li><li>Kündigung</li></ol>
+      </article>
+      <article class="area">
+        <div class="area-top"><span class="cap">Gutscheine</span><span class="ok">läuft</span></div>
+        <h4>Vom Kauf bis zur Einlösung</h4>
+        <p>Restwert immer im Blick.</p>
+        <ol class="loop" aria-label="Ablauf eines Gutscheins"><li>Kauf</li><li>Eigene Nummer</li><li>Mail an Beschenkte</li><li>Einlösung</li></ol>
+      </article>
+    </div>
+    <p class="hub"><span class="cap">Schaltzentrale</span> Alles läuft in einem selbst gebauten System zusammen. Neues meldet sich von allein, und Aufgaben erledigen wir mit einem Klick.</p>
+    <a class="cta" data-goatcounter-click="klick-tanzschule" href="https://www.bachata-viersen.de" target="_blank" rel="noopener">Kurse &amp; Probestunde auf bachata-viersen.de <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+<!-- ================= TECH ================= -->
+<section class="band sec tech" id="tech">
+  <div class="in">
+    <div class="sec-head"><h2 class="giant">Tech</h2><span class="cap">Kapitel 3 / 3 · Software</span></div>
+    <p class="statement" style="margin-bottom:clamp(36px,5vw,56px)">Digitale Lösungen für mich <em>selbst</em>.</p>
+
+    <article class="feature flip vt">
+      <div class="shot vt-demo" aria-label="Beispiel: derselbe gesprochene Satz in drei Fenstern">
+        <div class="vt-raw">
+          <div class="vt-row"><span class="cap">Gesprochen</span><b>62 Wörter</b></div>
+          <p><s>Ähm also, ich wollte nur kurz sagen, dass</s> ich die drei Fotos vom Workshop am Samstag brauche, <s>also</s> die vom Gruppenbild und die zwei vom Paartanz, <s>und ähm,</s> die bau ich dann auf der Website ein, und die Vorschau schick ich dir vorher <s>nochmal</s>, damit du sagen kannst, ob das so passt, <s>und ja,</s> wenn das bis Freitag klappen würde, wäre super.</p>
+          <span class="len" style="--w:1"></span>
+        </div>
+        <div class="vt-key"><kbd>F9</kbd><span class="mono">dasselbe Diktat, drei Fenster</span></div>
+        <div class="vt-wins">
+          <figure class="win w-term"><div class="bar"><i></i><i></i><i></i><span>Terminal</span><b>37 W.</b></div>
+            <pre>- Benötigt: drei Fotos vom Workshop am Samstag
+  - Gruppenbild
+  - zwei Fotos vom Paartanz
+- Ich baue sie auf der Website ein.
+- Vorschau schicke ich dir vorher zur Freigabe.
+- Deadline: bis Freitag, falls möglich.</pre><span class="len" style="--w:.6"></span></figure>
+          <figure class="win w-chat"><div class="bar"><i></i><i></i><i></i><span>Chat</span><b>51 W.</b></div>
+            <p>Hi,</p><p>ich brauche noch die drei Fotos vom Workshop am Samstag: das Gruppenbild und die zwei vom Paartanz. Die baue ich dann auf der Website ein, und die Vorschau schicke ich dir vorher nochmal, damit du sagen kannst, ob das so passt.</p><p>Wenn das bis Freitag klappen würde, wäre super! 😊</p><span class="len" style="--w:.82"></span></figure>
+          <figure class="win w-mail"><div class="bar"><i></i><i></i><i></i><span>E-Mail</span><b>50 W.</b></div>
+            <p>Ich benötige die drei Fotos vom Workshop am Samstag, nämlich das Gruppenbild und die zwei Aufnahmen vom Paartanz. Ich werde sie anschließend auf der Website einbauen und dir vorab die Vorschau zusenden, damit du prüfen kannst, ob alles so passt. Wenn es bis Freitag klappen würde, wäre das sehr hilfreich.</p><span class="len" style="--w:.81"></span></figure>
+        </div>
+      </div>
+      <div class="txt">
+        <span class="cap live">Im Einsatz seit Anfang 2026 · eines meiner ersten Projekte</span>
+        <h3 class="giant">VoiceType</h3>
+        <p>F9 drücken, sprechen, fertig. Der Rechner schreibt mit und macht daraus Text, der zum offenen Fenster passt: Stichpunkte im Terminal, eine lockere Nachricht im Chat, ganze Sätze in der Mail. Vor allem aber wird er <em>kürzer</em>.</p>
+        <p class="case-big vt-big"><b>91.704</b><span>→</span><b class="g">44.497</b><small>Wörter gesprochen → geschrieben</small></p>
+        <span class="mono">572 Diktate · im Schnitt halb so lang · Python · Whisper lokal · Claude</span>
+      </div>
+    </article>
+
+    <article class="feature">
+      <div class="txt">
+        <span class="cap live">Live · zum Ausprobieren</span>
+        <h3 class="giant">Taktgeber</h3>
+        <p>Intervall-Timer für Kettlebell-EMOM, Dehnen und Bewegungspausen. Alle 61 Ansagen spricht meine eigene, lokal geklonte Stimme. Läuft im Browser, auch wenn der Tab im Hintergrund ist.</p>
+        <span class="mono">HTML · Web Worker · Qwen3-TTS · kein Server</span>
+        <a class="btn" href="https://takt.nthanh.de" target="_blank" rel="noopener" data-goatcounter-click="klick-taktgeber">Timer starten ↗</a>
+      </div>
+      <div class="shot phones">
+        <img loading="lazy" decoding="async" class="ph a" src="assets/tg-lauf.webp" alt="Taktgeber läuft: goldener Countdown 00:06, als Nächstes 15 Squats" width="420" height="909">
+        <img loading="lazy" decoding="async" class="ph b" src="assets/tg-einstellen.webp" alt="Taktgeber, Bereich Einstellen: Intervall, Runden und Ablauf je Runde" width="420" height="909">
+      </div>
+    </article>
+
+    <article class="feature flip">
+      <div class="shot phones">
+        <img loading="lazy" decoding="async" class="ph a" src="assets/wo-app.webp" alt="WhenOpen-App: Liste der Lokale mit Öffnungszeiten, zehn Orte jetzt offen" width="420" height="933">
+        <img loading="lazy" decoding="async" class="ph b" src="assets/wo-widget.webp" alt="WhenOpen-Widget auf dem Startbildschirm mit den Orten, die gerade offen haben" width="420" height="933">
+      </div>
+      <div class="txt">
+        <span class="cap live">Android-App · läuft auf meinem Handy</span>
+        <h3 class="giant">WhenOpen</h3>
+        <p>Hat die Eisdiele noch offen? Die App zeigt auf einen Blick, welche meiner Orte gerade geöffnet haben, und das Widget direkt auf dem Startbildschirm. Ein neuer Ort ist in unter zwei Minuten eingetragen. Alles bleibt auf dem Handy: kein Konto, keine Cloud.</p>
+        <span class="mono">Flutter · Home-Widget · offline</span>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-txt">
+        <span class="cap">Workflow · Oktober 2026</span>
+        <h3 class="giant">Mobile Housekeeping</h3>
+        <p class="case-big"><b>5 GB</b><span>→</span><b class="g">105 GB</b><small>frei</small></p>
+        <p>Erst alles sichern, dann aussortieren und Videos neu kodieren. Der Rechner schlägt vor, ich entscheide.</p>
+        <span class="mono">Läuft jetzt jedes Jahr im Oktober</span>
+      </div>
+      <div class="case-chart">
+        <span class="cap">Woher die 100 GB kamen</span>
+        <ol class="bars"><li><span class="bl">Videos neu kodiert</span><span class="bt"><i style="--w:100.0%"></i></span><b>55 GB</b></li><li><span class="bl">Fotos aussortiert</span><span class="bt"><i style="--w:41.8%"></i></span><b>23 GB</b></li><li><span class="bl">Rest: WhatsApp, Downloads</span><span class="bt"><i style="--w:33.5%"></i></span><b>ca. 18 GB</b></li><li><span class="bl">Videos aussortiert</span><span class="bt"><i style="--w:6.5%"></i></span><b>3,6 GB</b></li></ol>
+      </div>
+    </article>
+
+    <div class="sub-h"><h3 class="giant">Weitere Projekte</h3>
+    </div>
+    <ol class="index" id="index">
+      <li class="item" data-k="wip"><h3 class="giant">Bewegungs&shy;studio</h3><p>Aus Videos echter Tänzer werden 3D-Bewegungsdaten. Jede Figur aus jeder Perspektive, in Zeitlupe, mit Zählzeiten.<span class="mono stk">MediaPipe · three.js · Python</span></p><span class="st wip"><i></i>Experiment</span><div class="thumb"><img loading="lazy" decoding="async" src="assets/p-bewegung.webp" alt=""></div></li>
+      <li class="item" data-k="wip"><h3 class="giant">Meine Stimme</h3><p>Text rein, Video raus: mit geklonter Stimme, Lippensynchronität und Untertiteln. Komplett auf dem eigenen Laptop.<span class="mono stk">Qwen3-TTS · Whisper · Remotion</span></p><span class="st wip"><i></i>Experiment</span><div class="thumb"><div class="tile"><span class="wave"><i style="height:30%"></i><i style="height:70%"></i><i style="height:45%"></i><i style="height:100%"></i><i style="height:60%"></i><i style="height:85%"></i><i style="height:35%"></i><i style="height:55%"></i></span></div></div></li>
+      <li class="item" data-k="ok"><h3 class="giant">PodScribe</h3><p>Transkribiert Wirtschaftspodcasts, bewertet sie und zieht die Erkenntnisse heraus, die ich wirklich brauche.<span class="mono stk">Whisper · LLM · Markdown</span></p><span class="st ok"><i></i>Im Einsatz</span><div class="thumb"><div class="tile"><span><b>“</b>Podcast → Notiz</span></div></div></li>
+      <li class="item" data-k="ok"><h3 class="giant">Traufeier</h3><p>Einladung und Gäste-Board für unsere Feier: vier Sprachen, Fotos der Gäste, Mitbring-Buffet, Allergien getrennt gespeichert. Nur für Gäste.<span class="mono stk">HTML · Supabase · Netlify · Telegram</span></p><span class="st ok"><i></i>Live · privat</span><div class="thumb"><div class="tile"><span><b>4</b>Sprachen</span></div></div></li>
+      <li class="item" data-k="wip">
+        <h3 class="giant">Körperkompass</h3>
+        <p>Karten zu 140 Lebensmitteln, 23 Laborwerten und 24 Leistungstests, damit ich weiß, was mein Körper braucht. Öffentlich nur dieser Steckbrief.</p>
+        <span class="st"><i></i>Geschützt</span>
+        <div class="thumb"><img loading="lazy" decoding="async" src="assets/p-kcal.webp" alt=""></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= TECH · CRAFTING ================= -->
+<section class="band sec maker" id="maker">
+  <div class="in">
+    <div class="sec-head"><h2 class="giant mid">Crafting</h2><span class="cap">Kapitel 3 / 3 · 3D-Druck &amp; Holz</span></div>
+    <div class="print" style="margin-bottom:0">
+      <div class="print-head">
+        <p class="statement">Was fehlt, <em>wird gebaut</em>.</p>
+        <p>Mit Holz und Plastik löse ich die kleinen Probleme des Alltags. Konstruiert in Onshape, gedruckt zu Hause, meistens weil es das Teil so nirgends zu kaufen gibt.</p>
+      </div>
+      <figure class="wall"><span class="light" aria-hidden="true"></span>
+        <img loading="lazy" decoding="async" src="assets/onshape-wand.webp" alt="Mosaik aus 139 CAD-Modellen: Halterungen, Haken, Klemmen, Dosen, Räder, Logos" width="2880" height="918">
+        <figcaption><b>150+</b><span>Konstruktionen in Onshape seit Januar 2024, von Haken und Halterungen bis zum Logo. Jede Kachel ist ein eigenes Teil, chronologisch von oben links.</span></figcaption>
+      </figure>
+      <div class="pairs">
+        <figure class="pair2">
+          <div class="cad"><img loading="lazy" decoding="async" src="assets/cad-stativ.webp" alt="CAD-Modell des Laptop-Stativs: Rohr, Eckverbinder und Ablage" width="600" height="340"><span class="mono tag2">Modell</span></div>
+          <div class="real"><img loading="lazy" decoding="async" src="assets/craft-stativ.webp" alt="Fertiges Laptop-Stativ: Holzstab auf Kettlebell, gedruckte Klemmen halten die Laptop-Ablage" width="900" height="1200"><span class="mono tag2 g">Gebaut</span></div>
+          <figcaption><b>Laptop-Stativ</b><span>Holzstab, eine Kettlebell als Fuß, gedruckte Klemmen und Ablage. Arbeiten im Stehen, wo immer gerade Platz ist.</span></figcaption>
+        </figure>
+        <figure class="pair2">
+          <div class="cad"><img loading="lazy" decoding="async" src="assets/cad-schublade.webp" alt="CAD-Explosionszeichnung des Schubladeneinsatzes mit Gitterstruktur und Schienen" width="600" height="340"><span class="mono tag2">Modell</span></div>
+          <div class="real"><img loading="lazy" decoding="async" src="assets/craft-schublade.webp" alt="Fertiger Schubladeneinsatz mit Ladeschale für Handy und Kopfhörer" width="1200" height="900"><span class="mono tag2 g">Gebaut</span></div>
+          <figcaption><b>Lade-Schublade</b><span>Ein Einsatz, in dem Handy und Kopfhörer laden, ohne Kabelsalat auf dem Tisch. Modell und Foto stammen vom selben Tag.</span></figcaption>
+        </figure>
+        <figure class="pair2">
+          <div class="cad"><img loading="lazy" decoding="async" src="assets/cad-kabelzug.webp" alt="CAD-Modell der Umlenkrolle: Wabengehäuse mit Laufrad" width="600" height="340"><span class="mono tag2">Modell</span></div>
+          <div class="real"><img loading="lazy" decoding="async" src="assets/craft-kabelzug.webp" alt="Gedruckte Umlenkrolle mit Gurt, Schäkel und Stahlseil an einer Stange unter der Decke" width="900" height="1200"><span class="mono tag2 g">Gebaut</span></div>
+          <figcaption><b>Kabelzug</b><span>Eine gedruckte Umlenkrolle, dazu Gurt, Schäkel und Stahlseil. Ein Seilzug fürs Training zu Hause.</span></figcaption>
+        </figure>
+        <figure class="pair2">
+          <div class="cad"><img loading="lazy" decoding="async" src="assets/cad-wegweiser.webp" alt="CAD-Modell des Schildhalters: drei Steckhülsen für die Stäbe, oben ein Schlitz für das Schild" width="600" height="340"><span class="mono tag2">Modell</span></div>
+          <div class="real"><img loading="lazy" decoding="async" src="assets/druck-schild.webp" alt="Holzschild Bachata Viersen auf einem Dreibein aus Holzstäben" width="1200" height="900"><span class="mono tag2 g">Gebaut</span></div>
+          <figcaption><b>Wegweiser</b><span>Ein gedruckter Halter, drei Holzstäbe, ein Schild. Fertig ist der Wegweiser für die Tanzschule.</span></figcaption>
+        </figure>
+      </div>
+      <div class="print-grid">
+        <figure class="pc"><img loading="lazy" decoding="async" src="assets/skizze.webp" alt="Bleistiftskizze der Logo-Flamme auf Karopapier" width="705" height="1100"><span class="arrow mono">1</span><span class="mat mono">Papier</span><figcaption><b>Skizze</b><span class="mono">Die Flamme, von Hand</span></figcaption></figure>
+        <figure class="pc"><img loading="lazy" decoding="async" src="assets/druck-wandlogo.webp" alt="Gedrucktes Flammen-Logo an der Wand" width="825" height="1100"><span class="arrow mono">2</span><span class="mat mono">3D-Druck</span><figcaption><b>Wandlogo</b><span class="mono">Dieselbe Flamme, gedruckt</span></figcaption></figure>
+        <figure class="pc"><img loading="lazy" decoding="async" src="assets/druck-verbinder.webp" alt="Gedruckter Verbinder hält drei Holzstäbe" width="825" height="1100"><span class="mat mono">Holz + Druck</span><figcaption><b>Dreibein-Verbinder</b><span class="mono">Das Teil, das es nicht zu kaufen gab</span></figcaption></figure>
+        <figure class="pc"><img loading="lazy" decoding="async" src="assets/druck-aufsteller.webp" alt="Schwarzer Flyer-Aufsteller mit Bachata-Logo" width="825" height="1100"><span class="mat mono">3D-Druck</span><figcaption><b>Flyer-Aufsteller</b><span class="mono">Korpus schwarz, Logo mehrfarbig</span></figcaption></figure>
+        <figure class="pc"><img loading="lazy" decoding="async" src="assets/craft-kueche.webp" alt="Küche mit selbst gebauter Gewürzwand aus Holz und vielen Gewürzgläsern" width="1400" height="1050"><span class="mat mono">Holz</span><figcaption><b>Gewürzwand</b><span class="mono">Jedes Glas hat seinen Platz</span></figcaption></figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= WIE ICH DENKE ================= -->
+<section class="band think" id="denken" aria-labelledby="denken-h">
+  <div class="in">
+    <span class="cap">Wie ich denke</span>
+    <h2 id="denken-h" class="think-h">Ich denke ein bisschen <em>anders</em>. Darum bin ich oft der, der <span class="swap" id="swap" aria-live="off">die Idee hat</span>.</h2>
+    <ul class="traits" id="traits">
+      <li data-say="die Idee hat"><b>Ideenfinder</b><span>Mir fällt ständig etwas ein, das fehlt. Über 150 Konstruktionen in zwei Jahren kommen nicht von ungefähr.</span></li>
+      <li data-say="andere mitzieht"><b>Motivator</b><span>Ob zehn Leute im Projekt oder 40 im Tanzsaal: Ich mag es, wenn eine Gruppe in Bewegung kommt.</span></li>
+      <li data-say="das Problem löst"><b>Problemlöser</b><span>Wenn etwas hakt, zerlege ich es, bis die Ursache auf dem Tisch liegt. Dann wird gebaut.</span></li>
+      <li data-say="genauer hinschaut"><b>Analytiker</b><span>Mathematiker eben. Erst verstehen, dann entscheiden, und am Ende nachrechnen.</span></li>
+      <li data-say="die Sache anschiebt"><b>Treiber</b><span>Eine Tanzschule gegründet und digitalisiert, neben einem Vollzeitjob. Stillstand liegt mir nicht.</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<!-- ================= JETZT + KONTAKT ================= -->
+<section class="band dark" id="kontakt">
+  <div class="in">
+    <div class="contact">
+      <span class="cap">Kontakt</span>
+      <h2 class="giant">Lass uns <em>reden.</em></h2>
+      <p style="font-size:1.2rem;margin-top:18px;max-width:40ch">Über ein Projekt, einen Tanzkurs oder einfach bei einem Kaffee.</p>
+      <div class="row2">
+        <span class="mail" id="mail">hallo@nthanh.de</span>
+        <button class="btn line" type="button" id="copy">Adresse kopieren</button>
+        <a class="btn gold" href="https://www.linkedin.com/in/thanh-nguyen-722b821b0/" target="_blank" rel="noopener" data-goatcounter-click="klick-linkedin">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="foot mono">
+      <span>© 2026 Thanh Nguyen · selbst gebaut, mit Claude</span>
+      <span><a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></span>
+    </div>
+  </div>
+</section>
+
+<div class="peek" id="peek" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<a class="totop" id="totop" href="#start" aria-label="Nach oben">↑</a>
+<nav class="dock" id="dock" aria-label="Kapitel">
+  <a href="#consulting">Consulting</a><a href="#tanzen">Tanzen</a><a href="#tech">Software</a><a href="#maker">Crafting</a><a class="wide" href="#denken">Denkweise</a><a href="#kontakt">Kontakt</a>
+</nav>
+
+<script>
+// ---- Tech: schwebende Vorschau am Mauszeiger (nur mit Maus) ----
+(() => {
+  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const peek = document.getElementById('peek');
+  let x = 0, y = 0, tx = 0, ty = 0, raf = 0;
+  const loop = () => { x += (tx - x) * .18; y += (ty - y) * .18; peek.style.left = x + 'px'; peek.style.top = y + 'px'; raf = requestAnimationFrame(loop); };
+  document.querySelectorAll('#index .item').forEach(it => {
+    it.addEventListener('mouseenter', e => { peek.innerHTML = it.querySelector('.thumb').innerHTML; tx = x = e.clientX + 190; ty = y = e.clientY; peek.classList.add('on'); if (!raf) loop(); });
+    it.addEventListener('mousemove', e => { tx = e.clientX + 190; ty = e.clientY; });
+    it.addEventListener('mouseleave', () => { peek.classList.remove('on'); cancelAnimationFrame(raf); raf = 0; });
+  });
+})();
+
+
+
+// ---- Dynamik: Fortschritt, Kapitel-Dock, Hochzählen, Einblenden, Kreislauf, Lichtkegel ----
+(() => {
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still) document.querySelectorAll('video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
+  const bar = document.getElementById('progress'), dock = document.getElementById('dock'), hero = document.getElementById('start');
+  const links = [...dock.querySelectorAll('a')];
+  const secs = links.map(a => document.querySelector(a.getAttribute('href')));
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      const h = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+      dock.classList.toggle('on', scrollY > hero.offsetHeight * .6);
+      document.getElementById('totop').classList.toggle('on', scrollY > hero.offsetHeight * .6);
+      let cur = -1; secs.forEach((sec, i) => { if (sec && sec.getBoundingClientRect().top < innerHeight * .45) cur = i; });
+      links.forEach((a, i) => a.classList.toggle('act', i === cur));
+      ticking = false;
+    });
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  if (!('IntersectionObserver' in window)) return;
+
+  // Zahlen zählen hoch, wenn sie ins Bild kommen (Endwert steht von Anfang an da)
+  const nums = [...document.querySelectorAll('.stat b, .wall b')];
+  const count = el => {
+    const txt = el.textContent, m = txt.match(/\d+/g); if (!m || still) return;
+    const t0 = performance.now(), dur = 1200;
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      let i = 0; el.textContent = txt.replace(/\d+/g, d => Math.round(+m[i++] * e));
+      if (k < 1) requestAnimationFrame(step); else el.textContent = txt;
+    };
+    requestAnimationFrame(step);
+  };
+  const io1 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { count(e.target); io1.unobserve(e.target); } }), { threshold: .6 });
+  nums.forEach(n => io1.observe(n));
+
+  // Blöcke gleiten beim Scrollen leicht nach oben (immer sichtbar, nur Bewegung)
+  if (!still) {
+    const blocks = [...document.querySelectorAll('.statement, .rows, .studio-lead .browser, .dance, .stats, .auto, .feature, .index, .wall, .print-grid, .contact h2')];
+    const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('shown'); io2.unobserve(e.target); } }), { threshold: .12 });
+    blocks.forEach(b => { if (b.getBoundingClientRect().top > innerHeight) { b.classList.add('rise'); io2.observe(b); } });
+  }
+
+  // Abläufe im Backstage: Gold wandert in jeder Kachel durch die Schritte
+  const loops = [...document.querySelectorAll('.loop')].map(l => [...l.children]);
+  if (loops.length && !still) { let i = 0; setInterval(() => { loops.forEach(li => li.forEach((l, j) => l.classList.toggle('hot', j === i % li.length))); i++; }, 1400); }
+
+  // VoiceType: die drei Fenster leuchten nacheinander auf
+  const wins = [...document.querySelectorAll('.vt-wins .win')];
+  if (wins.length && !still) { let k = 0; setInterval(() => { wins.forEach((w, j) => w.classList.toggle('hot', j === k)); k = (k + 1) % wins.length; }, 1800); }
+
+  // Lichtkegel über dem Onshape-Mosaik
+  const wall = document.querySelector('.wall');
+  if (wall && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    wall.addEventListener('mousemove', e => { const r = wall.getBoundingClientRect(); wall.style.setProperty('--mx', (e.clientX - r.left) + 'px'); wall.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+  }
+})();
+
+
+// ---- Wie ich denke: Satzende wechselt, passende Eigenschaft leuchtet ----
+(() => {
+  const swap = document.getElementById('swap'), items = [...document.querySelectorAll('#traits li')];
+  if (!swap || !items.length) return;
+  let i = 0, timer = null, paused = false;
+  const show = k => {
+    items.forEach((li, j) => li.classList.toggle('on', j === k));
+    swap.classList.add('out');
+    setTimeout(() => { swap.textContent = items[k].dataset.say; swap.classList.remove('out'); }, 300);
+  };
+  items[0].classList.add('on');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const tick = () => { if (!paused) { i = (i + 1) % items.length; show(i); } };
+  timer = setInterval(tick, 2600);
+  items.forEach((li, k) => {
+    li.addEventListener('mouseenter', () => { paused = true; i = k; show(k); });
+    li.addEventListener('mouseleave', () => { paused = false; });
+    li.addEventListener('click', () => { i = k; show(k); });
+  });
+})();
+
+
+// ---- Stimmen aus Google-Rezensionen wechseln ----
+(() => {
+  const box = document.getElementById('voices'); if (!box || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const q = document.getElementById('vq'), n = document.getElementById('vn');
+  const list = [
+    ['„Familiär, herzlich und total unkompliziert. Die Tanzlehrer nehmen sich Zeit für jeden Einzelnen.“', 'Vicky H. · Google'],
+    ['„Spaß steht im Vordergrund, das schafft die beste Lernatmosphäre. Unser Sonntag ist stets ein Highlight!“', 'Sharon & Aron · Google'],
+    ['„Die gute Laune der Lehrer ist ansteckend und motiviert zusätzlich.“', 'Google-Rezension'],
+    ['„Wir tanzen jetzt schon 1,5 Jahre bei Christina & Thanh, sie sind großartige Tanzlehrer.“', 'Gaby W. · Google'],
+    ['„Besonders cool finde ich, wie verständlich und sympathisch sie alles erklären.“', 'Google-Rezension']
+  ];
+  let i = 0;
+  setInterval(() => { box.classList.add('fade'); setTimeout(() => { i = (i + 1) % list.length; q.textContent = list[i][0]; n.textContent = list[i][1]; box.classList.remove('fade'); }, 420); }, 5200);
+})();
+
+
+// ---- Fallstudie Handy: Balken wachsen beim Hineinscrollen ----
+(() => {
+  const c = document.querySelector('.case'); if (!c || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (c.getBoundingClientRect().top < innerHeight) return;
+  c.classList.add('grow');
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { requestAnimationFrame(() => c.classList.remove('grow')); io.disconnect(); } }), { threshold: .3 });
+  io.observe(c);
+})();
+
+// ---- E-Mail kopieren ----
+document.getElementById('copy').addEventListener('click', async e => {
+  const el = document.getElementById('mail');
+  window.goatcounter?.count?.({ path: 'klick-mail-kopiert', event: true });
+  try { await navigator.clipboard.writeText(el.textContent); e.target.textContent = 'Kopiert'; }
+  catch { const r = document.createRange(); r.selectNodeContents(el); getSelection().removeAllRanges(); getSelection().addRange(r); e.target.textContent = 'Markiert, Strg+C'; }
+  setTimeout(() => e.target.textContent = 'Adresse kopieren', 2000);
+});
+</script>
+
+</body>
+</html>
