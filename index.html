@@ -246,7 +246,7 @@ ol.pipe { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5,
 .feature .phones .ph { position: absolute; width: min(40%, 210px); border-radius: 22px; border: 6px solid #2A2622; box-shadow: 0 24px 50px rgba(0,0,0,.5); }
 .phones .ph.a { left: 13%; top: 36px; transform: rotate(-4deg); }
 .phones .ph.b { right: 13%; top: 76px; transform: rotate(3deg); }
-@media (max-width: 760px) { .feature.flip .shot { border-right: 0; border-bottom: 1px solid var(--ink); order: -1; } .phones { min-height: 380px; } .feature .phones .ph { width: 44%; } .phones .ph.a { left: 4%; } .phones .ph.b { right: 4%; } }
+@media (max-width: 760px) { .feature.flip .shot { border-right: 0; border-top: 1px solid var(--ink); order: 1; } .phones { min-height: 380px; } .feature .phones .ph { width: 44%; } .phones .ph.a { left: 4%; } .phones .ph.b { right: 4%; } }
 .case { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--ink); color: var(--cream); margin-bottom: clamp(40px, 6vw, 72px); }
 .case-txt { padding: clamp(20px, 3vw, 40px); display: grid; gap: 14px; align-content: start; }
 .case-txt .cap { color: var(--gold); }
@@ -485,7 +485,7 @@ ol.pipe { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5,
           <div class="row akt"><span class="y">2026</span><h3>KI im Alltag</h3><p>Ein Jahr voller Werkzeuge, die mir und der Tanzschule echte Arbeit abnehmen. Mehr dazu unter Software.</p></div>
           <div class="row"><span class="y">seit 2021</span><h3>Technischer Teilprojektleiter</h3><p>Zehn Leute, ein langes Großprojekt, viel Coaching und Mentoring.</p></div>
           <div class="row"><span class="y">2020</span><h3>IPMA Level D</h3><p>Zertifizierter Projektmanager (GPM).</p></div>
-          <div class="row"><span class="y">seit 2015</span><h3>SAP-Consultant, ConVista</h3><p>Vom ABAP-Entwickler zum Tech-Lead für 30 IT-Fachkräfte. Beihilfe für eine Versorgungskasse, Vertriebsplattform für eine Bausparkasse, ABAP-Coaching für interne und externe Kollegen.<br><span class="chip">ABAP OO</span><span class="chip">SAP FS-CM</span><span class="chip">BRF+</span><span class="chip">ABAP in Eclipse</span></p></div>
+          <div class="row"><span class="y">seit 2015</span><h3>SAP-Consultant, ConVista</h3><p>Vom ABAP-Entwickler zum Tech-Lead für 30 IT-Fachkräfte. Beihilfe für eine Versorgungskasse, Vertriebsplattform für eine Bausparkasse, ABAP-Coaching für interne und externe Kollegen.<br><span class="chip">ABAP OO</span><span class="chip">SAP FS-CM</span><span class="chip">ABAP in Eclipse</span></p></div>
           <div class="row"><span class="y">2007–2014</span><h3>Mathematik, Uni Bonn</h3><p>B.Sc. und M.Sc., Schwerpunkt Numerik. Nebenbei Tutor.</p></div>
         </div>
       </div>
@@ -618,6 +618,7 @@ ol.pipe { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5,
         <h3 class="giant">WhenOpen</h3>
         <p>Hat die Eisdiele noch offen? Die App zeigt auf einen Blick, welche meiner Orte gerade geöffnet haben, und das Widget direkt auf dem Startbildschirm. Ein neuer Ort ist in unter zwei Minuten eingetragen. Alles bleibt auf dem Handy: kein Konto, keine Cloud.</p>
         <span class="mono">Flutter · Home-Widget · offline</span>
+        <a class="btn" href="https://github.com/KoelnThanh/whenopen/releases/latest" target="_blank" rel="noopener" data-goatcounter-click="klick-whenopen">App auf GitHub ↗</a>
       </div>
     </article>
 
@@ -692,7 +693,7 @@ ol.pipe { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5,
         <figure class="pc"><img loading="lazy" decoding="async" src="assets/druck-wandlogo.webp" alt="Gedrucktes Flammen-Logo an der Wand" width="825" height="1100"><span class="arrow mono">2</span><span class="mat mono">3D-Druck</span><figcaption><b>Wandlogo</b><span class="mono">Dieselbe Flamme, gedruckt</span></figcaption></figure>
         <figure class="pc"><img loading="lazy" decoding="async" src="assets/druck-verbinder.webp" alt="Gedruckter Verbinder hält drei Holzstäbe" width="825" height="1100"><span class="mat mono">Holz + Druck</span><figcaption><b>Dreibein-Verbinder</b><span class="mono">Das Teil, das es nicht zu kaufen gab</span></figcaption></figure>
         <figure class="pc"><img loading="lazy" decoding="async" src="assets/druck-aufsteller.webp" alt="Schwarzer Flyer-Aufsteller mit Bachata-Logo" width="825" height="1100"><span class="mat mono">3D-Druck</span><figcaption><b>Flyer-Aufsteller</b><span class="mono">Korpus schwarz, Logo mehrfarbig</span></figcaption></figure>
-        <figure class="pc"><img loading="lazy" decoding="async" src="assets/craft-kueche.webp" alt="Küche mit selbst gebauter Gewürzwand aus Holz und vielen Gewürzgläsern" width="1400" height="1050"><span class="mat mono">Holz</span><figcaption><b>Gewürzwand</b><span class="mono">Jedes Glas hat seinen Platz</span></figcaption></figure>
+        <figure class="pc"><img loading="lazy" decoding="async" src="assets/craft-kueche.webp" alt="Selbst gebaute Küche aus Holz mit Wandregal voller Gewürzgläser" width="1400" height="1050"><span class="mat mono">Holz</span><figcaption><b>Küche</b></figcaption></figure>
       </div>
     </div>
 
