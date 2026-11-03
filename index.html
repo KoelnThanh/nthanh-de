@@ -452,6 +452,72 @@ ol.pipe { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5,
 .wall:hover .light { opacity: 1; }
 @media (hover: hover) and (pointer: fine) { .wall img { filter: brightness(.8); transition: filter .3s; } .wall:hover img { filter: brightness(.65); } }
 @media (prefers-reduced-motion: reduce) { .hero > img, .hero h1 { animation: none; } .rise { transform: none; transition: none; } .dock { transition: none; } }
+
+/* v7: Bibliothek und Cockpit im Kapitel Tanzen, Weg in acht Zählzeiten */
+#tanzen .feature { color: var(--ink); border-color: var(--line-d); margin: clamp(48px, 7vw, 88px) 0 0; }
+#tanzen .feature .mono { color: var(--gold-lo); }
+#tanzen .feature .cap { color: var(--gold-lo); }
+#tanzen .feature .phones { background: var(--grad) !important; }
+.feature h3.lang { font-size: clamp(2.9rem, 6.2vw, 5.6rem); hyphens: manual; }
+.kenn { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; border-top: 1px solid rgba(10,10,10,.16); padding-top: 14px; }
+.kenn b { display: block; font: 900 clamp(1.7rem, 3vw, 2.5rem)/1 var(--f-disp); font-stretch: 62%; color: var(--gold-lo); }
+.kenn span { font-size: .82rem; color: #5E5750; }
+.feature .hinweis { font-size: .86rem; color: #5E5750; }
+.weg { border: 1px solid var(--line-d); }
+.weg-takt { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); }
+.weg-takt li + li { border-left: 1px solid var(--line-d); }
+.weg-takt button { all: unset; box-sizing: border-box; display: grid; gap: 6px; width: 100%; height: 100%; padding: 14px clamp(8px, 1.1vw, 14px); cursor: pointer; color: #B5ADA4; transition: background .25s, color .25s; }
+.weg-takt button:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: -2px; }
+.weg-takt button:hover { color: var(--cream); }
+.weg-takt b { font: 900 clamp(1.7rem, 3vw, 2.6rem)/.9 var(--f-disp); font-stretch: 62%; color: var(--gold); }
+.weg-takt span { font: 500 .7rem/1.25 var(--f-mono); text-transform: uppercase; letter-spacing: .04em; }
+.weg-takt button[aria-selected="true"] { background: var(--grad); color: var(--ink); }
+.weg-takt button[aria-selected="true"] b { color: var(--ink); }
+.weg-feld { border-top: 1px solid var(--line-d); padding: clamp(20px, 3vw, 36px); min-height: 23.6rem; }
+.weg.js .weg-feld[hidden] { display: none; }
+.weg-feld .schritt { font: 500 .72rem var(--f-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--gold-hi); }
+.weg-feld h4 { font: 900 clamp(1.9rem, 3.6vw, 3.1rem)/.95 var(--f-disp); font-stretch: 62%; text-transform: uppercase; margin: 8px 0 20px; }
+.weg-sp { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(18px, 3vw, 40px); }
+.weg-sp .cap { display: block; margin-bottom: 10px; color: var(--gold); }
+.weg-sp ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+.weg-sp li { color: #D8D1C9; padding-left: 18px; position: relative; max-width: 58ch; }
+.weg-sp li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; background: var(--gold); }
+.weg-sp .wir { border-left: 1px solid var(--line-d); padding-left: clamp(16px, 2.4vw, 32px); }
+.weg-sp .wir p { color: var(--cream); font-size: clamp(1.1rem, 1.7vw, 1.35rem); line-height: 1.35; }
+@media (max-width: 760px) {
+  .weg-takt button { padding: 11px 0; text-align: center; justify-items: center; }
+  .weg-takt span { display: none; }
+  .weg-feld { min-height: 0; }
+  .weg-sp { grid-template-columns: 1fr; }
+  .weg-sp .wir { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-d); padding-top: 16px; }
+}
+
+/* v7: Unter der Haube (für Techniker, standardmäßig zu) */
+.weg-tech { display: none; margin: 18px 0 0; padding-top: 12px; border-top: 1px dashed var(--line-d); font: 500 .74rem/1.5 var(--f-mono); color: var(--gold-hi); }
+.technik .weg-tech { display: block; }
+.technik .weg-feld { min-height: 27rem; }
+.haube { margin-top: 12px; border: 1px solid var(--line-d); }
+.haube summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 18px; font: 500 .8rem var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--gold-hi); }
+.haube summary::-webkit-details-marker { display: none; }
+.haube summary:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: -2px; }
+.haube summary:hover { color: var(--cream); }
+.haube summary::after { content: "+"; font-size: 1.2rem; line-height: 1; color: var(--gold); }
+.haube[open] summary::after { content: "–"; }
+.haube-gitter { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-d); }
+.haube-gitter > div { padding: 16px 18px; border-bottom: 1px solid var(--line-d); border-right: 1px solid var(--line-d); }
+.haube-gitter > div:nth-child(3n) { border-right: 0; }
+.haube-gitter h4 { font: 500 .72rem var(--f-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--gold); margin-bottom: 8px; }
+.haube-gitter p { color: #D8D1C9; font: 400 .8rem/1.55 var(--f-mono); }
+.haube-regeln { padding: 16px 18px; }
+.haube-regeln h4 { font: 500 .72rem var(--f-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--gold); margin-bottom: 8px; }
+.haube-regeln ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; }
+.haube-regeln li { color: #B5ADA4; font-size: .88rem; }
+@media (max-width: 960px) {
+  .haube-gitter { grid-template-columns: 1fr; }
+  .haube-gitter > div { border-right: 0; }
+  .haube-regeln ul { grid-template-columns: 1fr; }
+  .technik .weg-feld { min-height: 0; }
+}
 </style>
 </head>
 <body>
@@ -522,37 +588,115 @@ ol.pipe { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5,
       <blockquote id="vq">„Familiär, herzlich und total unkompliziert. Die Tanzlehrer nehmen sich Zeit für jeden Einzelnen.“</blockquote>
       <figcaption class="mono" id="vn">Vicky H. · Google</figcaption>
     </figure>
+    <article class="feature flip">
+      <div class="shot phones">
+        <img loading="lazy" decoding="async" class="ph a" src="assets/bib-figur.webp" alt="Figurenseite der App: Kursvideo mit mitlaufender Zählzeit 6, Position und Figur als Einblendung, darunter die Leiste 1 bis 8" width="420" height="909">
+        <img loading="lazy" decoding="async" class="ph b" src="assets/bib-pfad.webp" alt="Lernpfad der App: nächster Schritt, Fortschritt bei verstandenen und perfektionierten Figuren, Stränge wie Dominikana und Shadow" width="420" height="909">
+      </div>
+      <div class="txt">
+        <span class="cap live">Beta · nur für unsere Schüler</span>
+        <h3 class="giant lang">Figuren&shy;bibliothek</h3>
+        <p>Anders als viele Tanzschulen speichern wir die Videos aus dem Kurs ab, und zwar erschlossen bis auf die einzelne Zählzeit. Der Count läuft im Video mit, jede Position und jeder Baustein ist auffindbar, jeder Achter lässt sich in der Schleife üben. Dazu ein Lernpfad und ein Spiel, das die Bausteine abfragt.</p>
+        <div class="kenn">
+          <div><b>100+</b><span>Figuren</span></div>
+          <div><b>65</b><span>Bausteine</span></div>
+          <div><b>4.674</b><span>Zählzeiten</span></div>
+        </div>
+        <p class="hinweis">Im Kurs zählen wir laut. Genau das macht der Rechner zur Zeitachse: Er hört die Zahlen im Video, schlägt das Raster vor, und wir bestätigen.</p>
+        <span class="mono">Whisper · Posenerkennung · installierbare Web-App</span>
+      </div>
+    </article>
     <div class="pipe-head">
-      <h3>Backstage: eine<br>digitale Tanzschule</h3>
-      <p>Wir wollen so wenig Zeit wie möglich im Büro verbringen und so viel wie möglich im Saal. Deshalb läuft fast alles, was sich wiederholt, inzwischen automatisch.</p>
+      <h3>Backstage: der Weg<br>in acht Zählzeiten</h3>
+      <p>Wir wollen so wenig Zeit wie möglich im Büro verbringen und so viel wie möglich im Saal. Deshalb bereitet das System alles vor, was sich wiederholt. Entschieden wird von Menschen.</p>
     </div>
-    <div class="auto">
-      <article class="area">
-        <div class="area-top"><span class="cap">Kundengewinnung</span><span class="ok">läuft</span></div>
+    <div class="weg" id="weg">
+      <ol class="weg-takt" role="tablist" aria-label="Der Weg eines Schülers in acht Schritten"><li role="presentation"><button type="button" role="tab" id="wt1" aria-controls="wf1" aria-selected="true"><b>1</b><span>Anfrage</span></button></li><li role="presentation"><button type="button" role="tab" id="wt2" aria-controls="wf2" aria-selected="false"><b>2</b><span>Probestunde</span></button></li><li role="presentation"><button type="button" role="tab" id="wt3" aria-controls="wf3" aria-selected="false"><b>3</b><span>Anmeldung</span></button></li><li role="presentation"><button type="button" role="tab" id="wt4" aria-controls="wf4" aria-selected="false"><b>4</b><span>Rechnung</span></button></li><li role="presentation"><button type="button" role="tab" id="wt5" aria-controls="wf5" aria-selected="false"><b>5</b><span>Bezahlen</span></button></li><li role="presentation"><button type="button" role="tab" id="wt6" aria-controls="wf6" aria-selected="false"><b>6</b><span>Im Saal</span></button></li><li role="presentation"><button type="button" role="tab" id="wt7" aria-controls="wf7" aria-selected="false"><b>7</b><span>Änderung</span></button></li><li role="presentation"><button type="button" role="tab" id="wt8" aria-controls="wf8" aria-selected="false"><b>8</b><span>Danach</span></button></li></ol>
+      <div class="weg-feld" role="tabpanel" id="wf1" aria-labelledby="wt1">
+        <span class="schritt">1 · Anfrage</span>
         <h4>Keine Anfrage geht verloren</h4>
-        <p>Mail, Formular oder Anruf: alles landet an einem Ort.</p>
-        <ol class="loop cyc" aria-label="Wiederkehrender Ablauf"><li>Anfrage</li><li>Probestunde</li><li>Nachfassen alle 7 Tage</li><li>Mitglied</li></ol>
-      </article>
-      <article class="area">
-        <div class="area-top"><span class="cap">Anträge &amp; Anmeldung</span><span class="ok">läuft</span></div>
+        <div class="weg-sp"><div><span class="cap">Läuft von allein</span><ul><li>Stündlich liest ein selbst trainiertes Modell die neuen Mails und sortiert sie. Im Test fand es 387 von 392 echten Anfragen.</li><li>Fremde KI-Dienste lesen dabei nicht mit.</li><li>Kontaktdaten aus Formularmails werden automatisch übernommen.</li></ul></div><div class="wir"><span class="cap">Bleibt bei uns</span><p>Antworten oder verwerfen, mit einem Tipp.</p></div></div>
+        <p class="weg-tech">Gmail · Apps Script · scikit-learn: logistische Regression lokal trainiert, Gewichte als JavaScript ausgeliefert</p>
+      </div>
+      <div class="weg-feld" role="tabpanel" id="wf2" aria-labelledby="wt2">
+        <span class="schritt">2 · Probestunde</span>
+        <h4>Nachfassen vergisst keiner</h4>
+        <div class="weg-sp"><div><span class="cap">Läuft von allein</span><ul><li>Die Termine im Formular folgen unserem Kalender.</li><li>Jede Anmeldung landet sofort im Interessenten-Bestand, Doppelte werden erkannt.</li><li>Passiert 7 Tage lang nichts, meldet sich die Wiedervorlage.</li></ul></div><div class="wir"><span class="cap">Bleibt bei uns</span><p>Wer war da, und wer bekommt den Anmeldelink?</p></div></div>
+        <p class="weg-tech">Google Forms · Kalender · Sheets · Apps Script · Telegram Bot API</p>
+      </div>
+      <div class="weg-feld" role="tabpanel" id="wf3" aria-labelledby="wt3">
+        <span class="schritt">3 · Anmeldung</span>
         <h4>Anmelden ohne Papier</h4>
-        <p>Einmal online anmelden, der Rest passiert von allein.</p>
-        <ol class="loop" aria-label="Ablauf der Anmeldung"><li>Anmeldung</li><li>Vertrag &amp; Rechnung</li><li>Lastschrift</li><li>Kontakt synchron</li><li>In der Gruppe</li></ol>
-      </article>
-      <article class="area">
-        <div class="area-top"><span class="cap">Verwaltung &amp; Finanzen</span><span class="ok">läuft</span></div>
-        <h4>Ein Datensatz, alle Dokumente</h4>
-        <p>Alles aus denselben Daten, per Knopfdruck.</p>
-        <ol class="loop fan" aria-label="Dokumente aus einem Datensatz"><li>Datensatz</li><li>Rechnung</li><li>Lastschrift</li><li>Erinnerung</li><li>Pause</li><li>Kündigung</li></ol>
-      </article>
-      <article class="area">
-        <div class="area-top"><span class="cap">Gutscheine</span><span class="ok">läuft</span></div>
-        <h4>Vom Kauf bis zur Einlösung</h4>
-        <p>Restwert immer im Blick.</p>
-        <ol class="loop" aria-label="Ablauf eines Gutscheins"><li>Kauf</li><li>Eigene Nummer</li><li>Mail an Beschenkte</li><li>Einlösung</li></ol>
-      </article>
+        <div class="weg-sp"><div><span class="cap">Läuft von allein</span><ul><li>Aus einem Formular entstehen Kunde, Vertrag und Rechnungsentwurf.</li><li>Paare bleiben ein Vorgang, mit einem gemeinsamen Vertrag.</li><li>Der Kontakt wird synchronisiert, dann geht es in die Kursgruppe.</li></ul></div><div class="wir"><span class="cap">Bleibt bei uns</span><p>Einmal draufschauen, ob alles passt.</p></div></div>
+        <p class="weg-tech">Google Forms · Web-App-Endpunkt in Apps Script · Sheets · People API</p>
+      </div>
+      <div class="weg-feld" role="tabpanel" id="wf4" aria-labelledby="wt4">
+        <span class="schritt">4 · Rechnung</span>
+        <h4>Keine Nummer ohne Freigabe</h4>
+        <div class="weg-sp"><div><span class="cap">Läuft von allein</span><ul><li>Erst entsteht ein Prüf-PDF, die Rechnungsnummer kommt erst mit der Freigabe.</li><li>Wer überweist, bekommt einen QR-Code zum Scannen.</li><li>Nachts wandert jede neue Rechnung ins Archiv, 10 Jahre aufbewahrt und nicht überschreibbar.</li><li>Der Steuerberater bekommt jedes Quartal seinen Auszug.</li></ul></div><div class="wir"><span class="cap">Bleibt bei uns</span><p>Prüfen und freigeben.</p></div></div>
+        <p class="weg-tech">Apps Script · PDF aus Belegvorlage · GiroCode (EPC-QR) · Google Cloud Storage mit Aufbewahrungsrichtlinie</p>
+      </div>
+      <div class="weg-feld" role="tabpanel" id="wf5" aria-labelledby="wt5">
+        <span class="schritt">5 · Bezahlen</span>
+        <h4>Jede Zahlung findet ihre Rechnung</h4>
+        <div class="weg-sp"><div><span class="cap">Läuft von allein</span><ul><li>Die Sammellastschrift entsteht als Datei, vorher geprüft: IBAN, Mandat, Termin.</li><li>Kontoumsätze werden mit den offenen Forderungen abgeglichen.</li><li>Überfälliges und Rücklastschriften tauchen von selbst auf.</li></ul></div><div class="wir"><span class="cap">Bleibt bei uns</span><p>Die Lastschrift bei der Bank bestätigen, und entscheiden, wen wir freundlich erinnern.</p></div></div>
+        <p class="weg-tech">SEPA pain.008 · FinTS · CSV-Umsatzabgleich in Apps Script</p>
+      </div>
+      <div class="weg-feld" role="tabpanel" id="wf6" aria-labelledby="wt6">
+        <span class="schritt">6 · Im Saal</span>
+        <h4>Das Büro hilft beim Unterrichten</h4>
+        <div class="weg-sp"><div><span class="cap">Läuft von allein</span><ul><li>Vor jedem Kurssonntag kommt das Briefing: Wer ist neu, wer kommt aus der Pause zurück, wer hat Geburtstag?</li><li>Die Übungszeit kündigt sich donnerstags von allein an.</li></ul></div><div class="wir"><span class="cap">Bleibt bei uns</span><p>Die Leute begrüßen. Das kann kein Programm.</p></div></div>
+        <p class="weg-tech">Zeit-Trigger · Sheets · Calendar · Telegram Bot API · PWA</p>
+      </div>
+      <div class="weg-feld" role="tabpanel" id="wf7" aria-labelledby="wt7">
+        <span class="schritt">7 · Änderung</span>
+        <h4>Das Leben hält sich an keinen Vertrag</h4>
+        <div class="weg-sp"><div><span class="cap">Läuft von allein</span><ul><li>Pausieren, verlängern, kündigen: ein Dialog, Monat wählen, fertig.</li><li>War eine Rechnung falsch, entstehen Storno und neue Rechnung als ein Vorgang.</li><li>Auch wenn aus einem Paar zwei Einzelne werden oder umgekehrt, stimmt am Ende die Rechnung.</li></ul></div><div class="wir"><span class="cap">Bleibt bei uns</span><p>Den Vorgang freigeben, die Mail geht erst danach raus.</p></div></div>
+        <p class="weg-tech">Apps Script · Sheets · Testkunden und Testsuite</p>
+      </div>
+      <div class="weg-feld" role="tabpanel" id="wf8" aria-labelledby="wt8">
+        <span class="schritt">8 · Danach</span>
+        <h4>Sauber aufhören</h4>
+        <div class="weg-sp"><div><span class="cap">Läuft von allein</span><ul><li>Die letzte Stunde steht im Briefing, damit niemand ohne Abschied geht.</li><li>Interessenten ohne Kontakt werden nach 12 Monaten anonymisiert.</li></ul></div><div class="wir"><span class="cap">Bleibt bei uns</span><p>Tschüss sagen. Wer wiederkommt, fängt wieder bei 1 an.</p></div></div>
+        <p class="weg-tech">Monatlicher Zeit-Trigger in Apps Script · Zeit-Trigger für das Briefing</p>
+      </div>
     </div>
-    <p class="hub"><span class="cap">Schaltzentrale</span> Alles läuft in einem selbst gebauten System zusammen. Neues meldet sich von allein, und Aufgaben erledigen wir mit einem Klick.</p>
+    <p class="hub"><span class="cap">Nebenweg</span> Gutscheine: Kauf, eigene Nummer, Mail an die Beschenkten, Einlösung. Der Restwert bleibt immer im Blick.</p>
+    <details class="haube" id="haube">
+      <summary>Unter der Haube: für alle, die es genau wissen wollen</summary>
+      <div class="haube-gitter">
+        <div><h4>Daten &amp; Abläufe</h4><p>Google Workspace: Sheets, Gmail, Drive, Forms, Docs, Kalender<br>Google Apps Script, versioniert mit clasp und Git<br>Telegram Bot API als Melder</p></div>
+        <div><h4>Cockpit</h4><p>Installierbare PWA auf Netlify<br>Google Identity Services, ID-Token serverseitig geprüft<br>Apps Script als API</p></div>
+        <div><h4>Figurenbibliothek</h4><p>Cloudflare Pages und Functions<br>Cloudflare R2, privat, EU<br>Supabase: Anmeldung per Code, Postgres<br>Brevo für den Mailversand</p></div>
+        <div><h4>Videoanalyse, lokal</h4><p>Python, PyTorch auf eigener GPU<br>Whisper large-v3, wav2vec2 für die Zwangsausrichtung<br>YOLO11 Pose<br>ffmpeg</p></div>
+        <div><h4>Mail-Modell</h4><p>scikit-learn, logistische Regression<br>Training lokal, Laufzeit in Apps Script<br>Gleichlauftest zwischen Python und JavaScript</p></div>
+        <div><h4>Geld &amp; Archiv</h4><p>SEPA pain.008, FinTS<br>GiroCode nach EPC-Standard<br>Google Cloud Storage, 10 Jahre Aufbewahrung, EU<br>SHA-256 je Beleg</p></div>
+      </div>
+      <div class="haube-regeln">
+        <h4>Regeln, die alles zusammenhalten</h4>
+        <ul>
+          <li>Die Sheets sind die einzige Wahrheit.</li>
+          <li>Das Cockpit liest nur und reicht Befehle weiter.</li>
+          <li>Produktive Web-Apps laufen auf fest gepinnten Versionen.</li>
+          <li>Zeit-Trigger schreiben ein Lauf-Protokoll.</li>
+          <li>Telegram bekommt Nummern, keine Namen.</li>
+          <li>Videos liegen privat, jede Anfrage wird geprüft.</li>
+        </ul>
+      </div>
+    </details>
+    <article class="feature">
+      <div class="txt">
+        <span class="cap live">Handy-App · im Einsatz seit Oktober 2026</span>
+        <h3 class="giant">Cockpit</h3>
+        <p>Hier laufen alle acht Schritte zusammen. Das System meldet sich, wenn etwas zu entscheiden ist, und wir erledigen es mit einem Tipp, auch zwischen zwei Kursen. Das Cockpit selbst ändert nichts: Es zeigt an und gibt den Befehl an den Ablauf weiter, der ihn ohnehin ausführt.</p>
+        <p class="hinweis">Unter „Zahlen → Menschen“ sehen wir, aus welchen Orten unsere Schüler kommen und wie lange sie schon dabei sind. So wird aus einer Kundenliste wieder eine Gemeinschaft.</p>
+        <span class="mono">Installierbare Web-App · nur für uns beide · Bilder mit erfundenen Daten</span>
+      </div>
+      <div class="shot phones">
+        <img loading="lazy" decoding="async" class="ph a" src="assets/ck-briefing.webp" alt="Cockpit-Briefing für den Sonntag: neu dabei, letzte Stunde, Geburtstag, Zahlung überfällig, mit erfundenen Beispielnamen" width="420" height="909">
+        <img loading="lazy" decoding="async" class="ph b" src="assets/ck-heute.webp" alt="Cockpit-Startseite: zehn Vorgänge warten auf eine Entscheidung, Briefing und Freigaben als Karten, mit erfundenen Beispieldaten" width="420" height="909">
+      </div>
+    </article>
     <a class="cta" data-goatcounter-click="klick-tanzschule" href="https://www.bachata-viersen.de" target="_blank" rel="noopener">Kurse &amp; Probestunde auf bachata-viersen.de <span aria-hidden="true">↗</span></a>
   </div>
 </section>
@@ -799,7 +943,7 @@ ol.pipe { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5,
 
   // Blöcke gleiten beim Scrollen leicht nach oben (immer sichtbar, nur Bewegung)
   if (!still) {
-    const blocks = [...document.querySelectorAll('.statement, .rows, .studio-lead .browser, .dance, .stats, .auto, .feature, .index, .wall, .print-grid, .contact h2')];
+    const blocks = [...document.querySelectorAll('.statement, .rows, .studio-lead .browser, .dance, .stats, .weg, .feature, .index, .wall, .print-grid, .contact h2')];
     const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('shown'); io2.unobserve(e.target); } }), { threshold: .12 });
     blocks.forEach(b => { if (b.getBoundingClientRect().top > innerHeight) { b.classList.add('rise'); io2.observe(b); } });
   }
@@ -817,6 +961,44 @@ ol.pipe { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5,
   if (wall && matchMedia('(hover: hover) and (pointer: fine)').matches) {
     wall.addEventListener('mousemove', e => { const r = wall.getBoundingClientRect(); wall.style.setProperty('--mx', (e.clientX - r.left) + 'px'); wall.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
   }
+})();
+
+
+// ---- Backstage: Weg in acht Zählzeiten ----
+(() => {
+  const weg = document.getElementById('weg');
+  if (!weg) return;
+  const tabs = [...weg.querySelectorAll('[role=tab]')], felder = [...weg.querySelectorAll('[role=tabpanel]')];
+  weg.classList.add('js');
+  let i = 0, timer = null;
+  const zeige = k => {
+    i = k;
+    tabs.forEach((t, j) => { t.setAttribute('aria-selected', j === k); t.tabIndex = j === k ? 0 : -1; });
+    felder.forEach((f, j) => { f.hidden = j !== k; });
+  };
+  const stopp = () => { clearInterval(timer); timer = null; };
+  tabs.forEach((t, k) => t.addEventListener('click', () => { stopp(); zeige(k); }));
+  weg.querySelector('[role=tablist]').addEventListener('keydown', e => {
+    const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    if (!d) return;
+    e.preventDefault(); stopp(); zeige((i + d + tabs.length) % tabs.length); tabs[i].focus();
+  });
+  zeige(0);
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // läuft nur, solange der Block sichtbar ist; jede Bedienung beendet das Weiterzählen
+  let bedient = false;
+  ['pointerdown', 'keydown'].forEach(ev => weg.addEventListener(ev, () => { bedient = true; stopp(); }));
+  new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting && !bedient && !timer) timer = setInterval(() => zeige((i + 1) % tabs.length), 5500);
+    else if (!e.isIntersecting) stopp();
+  }), { threshold: .35 }).observe(weg);
+})();
+
+
+// ---- Unter der Haube: blendet auch die Technik je Schritt ein ----
+(() => {
+  const h = document.getElementById('haube'), weg = document.getElementById('weg');
+  if (h && weg) h.addEventListener('toggle', () => weg.classList.toggle('technik', h.open));
 })();
 
 
